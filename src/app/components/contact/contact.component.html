@@ -16,32 +16,32 @@
         </ul>
       </div>
     </div>
- 
+
     <div class="col-md-9 right">
       <div class="input-area">
         <div class="name-mobile input-data">
           <div class="form-group name">
             <i class="fa-solid fa-user"></i>
-            <input type="text" class="form-control" id="name" placeholder="Name">
+            <input [(ngModel)]="name" type="text" class="form-control" id="name" placeholder="Name">
           </div>
           <div class="form-group input-data mobile">
             <i class="fa-solid fa-mobile"></i>
-            <input type="text" class="form-control" placeholder="Mobile">
+            <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile">
           </div>
         </div>
         <div class="form-group input-data email">
           <i class="fa-solid fa-envelope"></i>
-          <input type="text" class="form-control" placeholder="Email">
+          <input [(ngModel)]="email" type="text" class="form-control" placeholder="Email">
         </div>
         <div class="form-group textbox input-data">
-          <textarea class="form-control" rows="7" placeholder="Write your message here"></textarea>
+          <textarea [(ngModel)]="query" class="form-control" rows="7" placeholder="Write your message here"></textarea>
         </div>
-        <div class="send-btn">
+        <div (click)="save()" class="send-btn">
           <a  class="btn btn-outline-primary send">Send</a>
         </div>
       </div>
     </div>
   </div>
 </div>
- 
+
 

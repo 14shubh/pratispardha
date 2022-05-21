@@ -4,28 +4,61 @@
         <div class="col-md-3 left">
             <div class="side-nav">
                 <div class="user-img">
-                    <div class="img">
+                    <div  class="img">
+                      <input (change)="uploadImage($event)" type="file" capture="enviroment" style="visibility: hidden;" >
+
                         <img src="{{UserProfile.image}}" alt="User Image" class="img-fluid">
+
+                        <i  (click)="selectFile()" class="fa-solid fa-camera"></i>
                     </div>
                     <div class="user_name">
                         <h2>{{UserProfile.name}}</h2>
                     </div>
                 </div>
                 <div class="side-links">
-                    <ul class="navbar nav">
-                        <li class="nav-item">
-                            <a class="nav-link" routerLink="profile" >Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" routerLink="update-profile">Update Profile</a>
-                        </li>
-                    </ul>
+
                 </div>
             </div>
         </div>
         <div class="col-md-9 right">
             <div class="right-content">
-                <router-outlet></router-outlet>
+              <div class="profile">
+                <div class="header">
+                    <div class="name">
+                        <h2>{{UserProfile.name}}</h2>
+                        <span>{{UserProfile.playerType}}</span>
+                    </div>
+                    <div (click)="update()" class="update-btn">
+                        <a  class="update">Profile Update</a>
+                    </div>
+                </div>
+                <span class="bottom-border"></span>
+                <div class="profile-content">
+                    <div class="text form-group">
+                        <input  [(ngModel)]="email" type="text" class="form-control" placeholder="Email" disabled>
+                    </div>
+                    <div class="text form-group">
+                        <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile"  [disabled]="isDisabled">
+                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                    </div>
+                    <div class="text form-group">
+                        <input [(ngModel)]="playerType" type="text" class="form-control" placeholder="PlayerType" [disabled]="isDisabled">
+                    </div>
+                    <div class="text form-group">
+                        <input [(ngModel)]="age" type="text"  class="form-control" placeholder="Age"  [disabled]="isDisabled">
+                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                    </div>
+                    <div class="text form-group">
+                        <input [(ngModel)]="address" type="text" class="form-control" placeholder="Address" [disabled]="isDisabled">
+                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                    </div>
+                    <div class="text form-group">
+                        <input [(ngModel)]="description" type="text" class="form-control" placeholder="description" [disabled]="isDisabled">
+                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                    </div>
+                </div>
+            </div>
+
             </div>
         </div>
     </div>

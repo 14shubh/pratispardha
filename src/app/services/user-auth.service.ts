@@ -4,20 +4,20 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Team } from '../model/team';
 import { User } from '../model/user';
- 
+
 @Injectable({
   providedIn: 'root'
 })
 export class UserAuthService {
- serverUrl:string="https://spardhaa.herokuapp.com"
-// serverUrl:string="http://localhost:3000"
+ //serverUrl:string="https://spardhaa.herokuapp.com"
+serverUrl:string="http://localhost:3000"
   constructor(private _http:HttpClient) { }
- 
+
   public register(user:User):Observable<User> {
     let url=this.serverUrl + "/signup"
    return this._http.post<any>(url, user);
   }
- 
+
   public login(user:User):Observable<any>{
     let url=this.serverUrl + "/signin"
     return this._http.post<any>(url,user);
@@ -26,14 +26,14 @@ export class UserAuthService {
     let url=this.serverUrl + "/signin-with-google"
     return this._http.post<any>(url,{email:email})
   }
- 
+
   public playerList():Observable<any>{
     let url=this.serverUrl + "/view-players"
     return this._http.get<any>(url);
   }
-  public updateProfile(user:User):Observable<any>{
+  public updateProfile(fd:any):Observable<any>{
     let url=this.serverUrl + "/update-profile"
-    return this._http.post<any>(url,user);
+    return this._http.post<any>(url,fd);
   }
   public viewProfile(playerId:any):Observable<any>{
     let url=this.serverUrl + "/view-profile/"+playerId;
@@ -84,12 +84,17 @@ export class UserAuthService {
     let url=this.serverUrl +"/payment/get-payment"
       return this._http.post<any>(url, {amount:amount});
   }
+  public saveQuery(name:string,email:string,mobile:string,query:string):Observable<any>{
+    let url=this.serverUrl+"/contact/contact";
+    return this._http.post<any>(url,{name:name,email:email,mobile:mobile,query:query});
+
+  }
 }
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
 

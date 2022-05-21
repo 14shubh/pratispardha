@@ -15,10 +15,10 @@ export class RegistrationFormComponent implements OnInit {
  name:string='';email:string='';mobile:string='';
    constructor(private ngZone:NgZone ,
     public spin: NgxSpinnerService,
-    
+
     private toast:ToastrService,private activateRouter:ActivatedRoute,private userAuth:UserAuthService,private router:Router) {
   }
-    
+
 public   async ragisterForTournament(){
   if((this.tournamentIds.indexOf(this.eventId))==(-1)){
       if((this.tournamentDates.indexOf(this.eventData.tournamentStartDate.toString()))==(-1)){
@@ -96,7 +96,7 @@ public   async ragisterForTournament(){
 
 
 
- 
+
   ngOnInit(): void {
     this.spin.show();
     this.eventId= this.activateRouter.snapshot.params['eventId'];
@@ -107,7 +107,7 @@ public   async ragisterForTournament(){
           console.log(data)
           this.userAuth.viewProfile(this.userId).subscribe(data=>{
             console.log(data);
-          
+
             this.teamData=data;
             this.name=data.name;
             this.email=data.email;
@@ -121,18 +121,19 @@ public   async ragisterForTournament(){
             this.teamName=data[0].name;
             this.teamId=data[0]._id;
             this.flag=true;
-            this.spin.hide()
+
       console.log("team is already found")
           }
+          this.spin.hide();
         });
       });
-     
-      
- 
- 
+
+
+
+
   }
- 
- 
+
+
 }
- 
+
 
