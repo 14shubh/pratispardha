@@ -1,15 +1,14 @@
-//Install express server
-const express = require('express');
+//Install express seryyress = require('express');
 const path = require('path');
 
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static(__dirname ,'dist','pratispardha-frontend'));
+app.use(express.static(__dirname + '/dist/pratispardha-frontend'));
 
 app.get('/*', function(req, res) {
 
-    res.sendFile(path.join(__dirname,'dist','pratispardha-frontend','index.html'));
+    res.sendFile(path.join(__dirname, 'dist','pratispardha-frontend','index.html'));
 });
 
 // Start the app by listening on the default Heroku port
