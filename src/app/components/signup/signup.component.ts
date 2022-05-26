@@ -29,7 +29,9 @@ export class SignupComponent implements OnInit {
     console.log(this.user);
     this._userAuth.register(this.user).subscribe((data)=>{
       console.log(data);
-      this.toast.success("Signup Success")
+      this.toast.success("Signup Success");
+      this.toast.info("Checku your Email for verification");
+
       this._router.navigate(['sign-in']);
     },(err)=>{
       console.log(err);
