@@ -10,13 +10,16 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class EventDetailsComponent implements OnInit {
   event:any;
+  status:any;
 
   constructor(private _activeRouter:ActivatedRoute,
    public spin: NgxSpinnerService,
       private _userAuth:UserAuthService, private _router:Router) {
+        this.status=this._activeRouter.snapshot.params['status'];
         this.spin.show()
      this._userAuth.viewTournamentById(this._activeRouter.snapshot.params['eventId']).subscribe(data=>{
        this.spin.hide();
+       console.log("data.............................")
        console.log(data);
            this.event=data;
      })

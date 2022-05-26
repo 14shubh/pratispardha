@@ -12,7 +12,7 @@
   </div>
 
   <div class="row cards">
-    <div class="col-lg-2 col-md-3 col-6 player-card" *ngFor="
+    <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 player-card" *ngFor="
         let Players of playerList | filter:term
           | paginate
             : {
@@ -42,4 +42,4 @@
     </pagination-controls>
   </div>
 </div>
-<!-- <ngx-spinner type="ball-scale-multiple" style="color: blue; background-color:whitesmoke;">Loading ...</ngx-spinner> -->
+<ngx-spinner type="ball-scale-multiple" style="color: blue; background-color:whitesmoke;">Loading ...</ngx-spinner>

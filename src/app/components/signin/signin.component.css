@@ -154,10 +154,25 @@
     -webkit-appearance:none;
     box-shadow: none !important;
 }
-.sign-up-btn{
+.right .input-box .input-area .pass{
+    margin-bottom: 0;
+}
+.right .input-box .input-area .forgot{
+    margin-top: 10px;
+    text-align: right;
+}
+.right .input-box .input-area .forgot a{
+    font-size: 14px;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    color: #0051FF;
+    font-weight: 500;
+    cursor: pointer;
+}
+.sign-in-btn {
     margin:50px 0 30px 0;
 }
-.sign-up-btn .sign-up{
+.sign-in-btn .sign-in{
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
@@ -176,21 +191,69 @@
     -o-transition: 0.4s ease-in-out;
     cursor: pointer;
 }
-.sign-up-btn .sign-up:hover{
+.sign-in-btn .sign-in:hover{
     color: #fff;
     background: var(--blue-radial-gradient);
     border: 0;
 }
-.old-user p{
+.new-user p{
     font-size: 14px;
     letter-spacing: 1px;
     font-weight: 600;
 
 }
-.old-user p a{
+.new-user p a{
     font-size: 16px;
     margin-left: 10px;
     cursor: pointer;
     color:rgb(0, 117, 226);
     text-decoration: underline;
 }
+@media only screen and (min-width:320px) and (max-width:567px) {
+    .signin-box{
+        box-shadow: none;
+        
+    }
+
+
+    .right{
+        padding: 30px 20px;
+    }
+    .right .input-box .title h3{
+        font-size: 24px;
+    }
+    .signin-box .left img{
+        display: none;
+    }
+    .google-sign-in .google-btn{
+      
+        font-size:14px;
+        padding: 5px 20px;
+    }
+    .google-sign-in .google-btn .fa-google {
+        font-size:18px;
+    }
+    .or p::before{
+        right: 151px;
+    }
+
+    .right .input-box .input-area .form-group input{
+        font-size: 14px;
+    }
+    .right .input-box .input-area .form-group input, .right .input-box .input-area .form-group select{
+        font-size:14px;
+    }
+    .right .input-box .input-area .form-group i{
+        font-size: 14px;
+    }
+    .sign-in-btn .sign-in{
+        font-size: 18px;
+        padding: 3px 30px; 
+    }
+    .new-user p{
+        font-size: 12px;
+    }
+    .new-user p a{
+        font-size: 14px;
+    }
+} 

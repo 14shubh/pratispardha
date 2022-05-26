@@ -67,6 +67,9 @@ export class SigninComponent implements OnInit {
         })
     })
   }
+  forget(){
+    
+  }
   ngOnInit(): void {
   }
  

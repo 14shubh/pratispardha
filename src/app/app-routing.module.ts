@@ -15,6 +15,7 @@ import { HomComponent } from './components/hom/hom.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { AuthGuard } from './auth.guard';
+import { TournamentHistoryComponent } from './components/tournament-history/tournament-history.component';
 
 
 const routes: Routes = [
@@ -54,9 +55,10 @@ const routes: Routes = [
   {
     path:'view-profile/:playerId',
     component: ViewProfileComponent,
+    canActivate:[AuthGuard]
   },
   {
-    path:'event-details/:eventId',
+    path:'event-details/:eventId/:status',
     component: EventDetailsComponent,
   },
   {
@@ -68,8 +70,11 @@ const routes: Routes = [
     path:"profile",
     component:UserProfileComponent,
     canActivate:[AuthGuard]
-  }
-,
+  },
+  {
+    path:"tournament-history",
+    component:TournamentHistoryComponent,
+  },
   {
     path:'**',
     component:ErrorPageComponent

@@ -24,22 +24,67 @@
                         <small id="helpId" *ngIf="email.errors?.['required'] && email.touched" class="text-muted">Please
                             enter email</small>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group pass">
                         <i class="fa-solid fa-unlock-keyhole"></i>
                         <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password"
                             id="password" class="form-control" placeholder="Password" aria-describedby="helpId" />
                         <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched" class="text-muted">Please
                             enter password</small>
                     </div>
-
-                    <div class="sign-up-btn">
-                        <a (click)="SignIn()" class="sign-up">Sign In</a>
+                    <div class="forgot">
+                        <a (click)="forget()" data-bs-toggle="modal" data-bs-target="#exampleModal">Forget password ?</a>
+                    </div>
+                    <div class="sign-in-btn">
+                        <a (click)="SignIn()" class="sign-in">Sign In</a>
                     </div>
                 </div>
-                <div class="old-user">
+                <div class="new-user">
                     <p>New account ? <a (click)="sign_up_page()">Sign Up</a></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+<!-- <div class="modal fade" tabindex="-1" id="forget">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Modal body text goes here.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <!-- Button trigger modal -->
+<!--   -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

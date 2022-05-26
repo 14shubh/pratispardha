@@ -197,9 +197,11 @@
 
 .view-all{
     padding: 5px 0;
-    display:inline;
+    /* display:inline; */
     margin:20px auto;
     position: relative;
+    width: fit-content;
+    /* background: #00305A; */
 }
 .view-all .view-text{
     font-size:16px;
@@ -517,8 +519,15 @@
 }
 
 @media only screen and (min-width:320px) and (max-width: 567px) {
+    .carousel-inner{
+        height: 30vh;
+    }
     .carousel-inner .carousel-item{
+        height: 100%;
         padding: 0;
+    }
+    .carousel-inner .carousel-item img{
+        height: 100%;
     }
     .carousel-inner .carousel-item .banner-content{
         width: 80%;
@@ -538,22 +547,22 @@
     }
 
     .heading h1{
-        font-size:24px;
+        font-size:20px;
     }
 
     .event-title{
         padding:0 20px;
     }
     .event-title h2{
-        font-size: 20px;
-        /* text-shadow: 0 5px 4px rgba(194, 194, 194, 0.24); */
+        font-size: 16px;
     }
     .event-title .underline{
-        width: 225px;
+        width: 185px;
     }
     .event-title .fa-arrow-right{
-        top: 5px;
-        left: 225px;
+        top: 4px;
+        left: 190px;
+        font-size: 14px;
     }
 
     .evets {
@@ -581,6 +590,9 @@
     
     .event-card .card-content .overlay-box .overlay-btn{
         margin-top: 50px;
+    }
+    .view-all{
+        margin:20px auto;
     }
     .story-section .story{
         padding: 50px 0 !important;

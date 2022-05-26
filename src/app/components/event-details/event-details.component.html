@@ -3,7 +3,7 @@
     <div class="col-md-6 left">
       <div class="event-image">
         <img
-          src="../../../assets/images/event_1.png"
+          src="{{event.banner}}"
           alt="event image"
           class="img-fluid"
         />
@@ -38,7 +38,7 @@
         <span class="note">each team will pay {{event.tournamentFees}}/- as participating fee.</span>
       </div>
 
-      <div class="register-btn">
+      <div *ngIf="status==1" class="register-btn">
         <a class="register"  (click)="register(event._id)">Register</a>
       </div>
     </div>
