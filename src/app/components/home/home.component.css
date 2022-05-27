@@ -1,4 +1,6 @@
-
+.carousel{
+    margin-top: 56px;
+}
 
 .carousel-inner .carousel-item .banner-content{
     position: absolute;
@@ -519,6 +521,16 @@
 }
 
 @media only screen and (min-width:320px) and (max-width: 567px) {
+    .carousel-indicators button{
+        width: 15px;
+        height: 1px;
+    }
+    .slide .carousel-control-prev .carousel-control-prev-icon, .slide .carousel-control-next .carousel-control-next-icon{
+        height: 15px;
+    }
+    .carousel-indicators{
+        margin-bottom: 0;
+    }
     .carousel-inner{
         height: 30vh;
     }
@@ -534,16 +546,13 @@
         padding: 20px;
     }
     .carousel-inner .carousel-item .banner-content h1{
-        font-size: 14px;
+        font-size: 12px;
         margin-bottom: 10px;
         font-weight: 400;
     }
     .carousel-inner .carousel-item .banner-content span{
-        font-size: 10px;
+        font-size: 8px;
         margin: 0;
-    }
-    .carousel-indicators{
-        margin-bottom: 0;
     }
 
     .heading h1{

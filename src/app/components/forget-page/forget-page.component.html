@@ -1,0 +1,12 @@
+<div class="forget">
+    <div class="email">
+        <span>Enter your email :</span>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" [(ngModel)]="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="submit-btn">
+            <a (click)="sendMail()"class="submit">Submit</a>
+        </div>
+    </div>
+</div>

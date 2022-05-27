@@ -1,5 +1,5 @@
 .players-list{
-    padding:50px 0;
+    padding:80px 0;
 }
 
 .search_bar{
@@ -166,7 +166,7 @@
     font-weight:600;
 }
 
-@media only screen and (max-width:320px) and (max-width:567px){
+@media only screen and (min-width:280px) and (max-width:567px){
 
     .player-card{
         padding: 0 30px;

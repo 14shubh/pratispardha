@@ -89,6 +89,14 @@ export class UserAuthService {
     return this._http.post<any>(url,{name:name,email:email,mobile:mobile,query:query});
 
   }
+  public sendMail(email:string):Observable<any>{
+    let url = this.serverUrl+"/send-mail";
+    return this._http.post<any>(url,{email:email});
+  }
+  public newPassword(Id:string, password:string):Observable<any>{
+    let url = this.serverUrl+"/forgot-password";
+    return this._http.post<any>(url,{id:Id,password:password});
+  }
 }
 
 

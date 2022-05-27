@@ -68,7 +68,7 @@ export class SigninComponent implements OnInit {
     })
   }
   forget(){
-    
+    this._router.navigate(['forget-password']);
   }
   ngOnInit(): void {
   }

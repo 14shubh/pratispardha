@@ -29,6 +29,8 @@ import { HomComponent } from './components/hom/hom.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { TournamentHistoryComponent } from './components/tournament-history/tournament-history.component';
+import { ForgetPageComponent } from './components/forget-page/forget-page.component';
+import { NewPasswordComponent } from './components/new-password/new-password.component';
 
 const socialProvider={
   provide:"SocialAuthServiceConfig",
@@ -59,7 +61,9 @@ const socialProvider={
     UserProfileComponent,
 
     UpdateProfileComponent,
-      TournamentHistoryComponent
+      TournamentHistoryComponent,
+      ForgetPageComponent,
+      NewPasswordComponent
   ],
   imports: [
     BrowserModule,

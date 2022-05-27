@@ -16,6 +16,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { AuthGuard } from './auth.guard';
 import { TournamentHistoryComponent } from './components/tournament-history/tournament-history.component';
+import { ForgetPageComponent } from './components/forget-page/forget-page.component';
+import { NewPasswordComponent } from './components/new-password/new-password.component';
 
 
 const routes: Routes = [
@@ -74,6 +76,14 @@ const routes: Routes = [
   {
     path:"tournament-history",
     component:TournamentHistoryComponent,
+  },
+  {
+    path: "forget-password",
+    component:ForgetPageComponent
+  },
+  {
+    path:"new-password/:id",
+    component:NewPasswordComponent
   },
   {
     path:'**',

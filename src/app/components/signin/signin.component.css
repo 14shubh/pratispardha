@@ -214,10 +214,9 @@
         box-shadow: none;
         
     }
-
-
+    
     .right{
-        padding: 30px 20px;
+        padding: 60px 20px;
     }
     .right .input-box .title h3{
         font-size: 24px;
@@ -233,8 +232,15 @@
     .google-sign-in .google-btn .fa-google {
         font-size:18px;
     }
+    .or p{
+        font-size: 14px;
+    }
     .or p::before{
-        right: 151px;
+        top: 10px;
+        right: 142px;
+    }
+    .or p::after{
+        top: 10px;
     }
 
     .right .input-box .input-area .form-group input{
