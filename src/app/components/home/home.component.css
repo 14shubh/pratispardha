@@ -118,7 +118,7 @@
     padding: 25px 15px;
     font-weight: 600;
     color: #fff;
-    opacity: 1;
+    opacity: 0;
     transition: ease-in-out 0.3s;
     border-radius: 5px !important;
     -webkit-border-radius: 5px !important;
@@ -130,9 +130,9 @@
     -ms-transition: ease-in-out 0.3s;
     -o-transition: ease-in-out 0.3s;
 }
-/* .event-card .card-content:hover .overlay-box {
+.event-card .card-content:hover .overlay-box {
     opacity: 1;
-} */
+}
 
 
 .event-card .card-content .overlay-box .overlay-content h3{
