@@ -118,7 +118,7 @@
     padding: 25px 15px;
     font-weight: 600;
     color: #fff;
-    opacity: 0;
+    opacity: 1;
     transition: ease-in-out 0.3s;
     border-radius: 5px !important;
     -webkit-border-radius: 5px !important;
@@ -130,9 +130,9 @@
     -ms-transition: ease-in-out 0.3s;
     -o-transition: ease-in-out 0.3s;
 }
-.event-card .card-content:hover .overlay-box {
+/* .event-card .card-content:hover .overlay-box {
     opacity: 1;
-}
+} */
 
 
 .event-card .card-content .overlay-box .overlay-content h3{
@@ -323,7 +323,7 @@
     }
     .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
         
-        font-size: 12px;
+        font-size: 11px;
     }
     .event-card .card-content .overlay-box .overlay-btn a{
         font-size: 12px;
@@ -358,27 +358,26 @@
         padding: 10px;
     }
     .event-card .card-content .primary-text h3{
-        font-size: 15px;
+        font-size: 24px;
     }
     .event-card .card-content .primary-text span{
         font-size: 10px;
         
     }
     .event-card .card-content .overlay-box{
-        padding: 10px 8px;
+        padding: 35px 15px;
     }
     .event-card .card-content .overlay-box .overlay-content h3{
-        font-size: 12px;
+        font-size: 18px;
     }
     .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
-        
-        font-size: 10px;
+        font-size: 13px;
     }
     .event-card .card-content .overlay-box .overlay-btn{
         margin-top: 30px;
     }
     .event-card .card-content .overlay-box .overlay-btn a{
-        font-size: 10px;
+        font-size: 13px;
         padding: 5px 14px;
     }
     .heading{
@@ -520,7 +519,7 @@
     }
 }
 
-@media only screen and (min-width:320px) and (max-width: 567px) {
+@media only screen and (max-width: 567px) {
     .carousel-indicators button{
         width: 15px;
         height: 1px;
@@ -581,25 +580,37 @@
         padding: 20px 30px;
     }
     .event-card .card-content .primary-text h3{
-        font-size: 25px;
+        font-size: 18px;
+    }
+    .event-card .card-content .primary-text h3 span{
+        font-size: 14px;
     }
     .event-card .card-content .overlay-box{
-        padding: 45px 25px 20px 25px;
+        padding: 45px 15px 30px 15px;
     }
     
     .event-card .card-content .overlay-box .overlay-content h3{
-        font-size: 24px;
+        font-size: 16px;
     }
     .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
-        font-size: 18px;
+        font-size: 12px;
     }
     .event-card .card-content .overlay-box .overlay-content .organiser{
         margin: 50px 0;
     }
     
     .event-card .card-content .overlay-box .overlay-btn{
-        margin-top: 50px;
+        margin-top: 30px;
     }
+    .event-card .card-content .overlay-box .overlay-btn a{
+        padding:5px 10px;
+        font-size:12px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+}
     .view-all{
         margin:20px auto;
     }

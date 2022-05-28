@@ -1,7 +1,7 @@
 .player-profile{
-    padding:50px 0;
+    padding:80px 0;
     box-shadow: 0 0 3px rgba(0, 0, 0,0.5);
-    margin:50px 0;
+    margin:120px 0;
     border-radius:3px ;
     -webkit-border-radius:3px ;
     -moz-border-radius:3px ;
@@ -13,7 +13,7 @@
     margin: auto;
     width: fit-content;
     background: var( --blue-radial-gradient);
-    padding:15px 50px 0 50px;
+    padding:15px 30px 0 30px;
     
 }
 .left .left-image{
@@ -111,9 +111,7 @@
 .right .player-info .text{
     position:relative;
     display: flex;
-    /* justify-content: space-between; */
     margin: 30px 0;
-    /* align-items: flex-start; */
 }
 .right .player-info .border-bottom{
   position: absolute;
@@ -125,4 +123,111 @@
 .right .player-info .text span:nth-child(2){
     margin-left: auto;
     
+}
+
+@media only screen and (min-width: 1200px) and (max-width:1400px){
+    
+    .left .left-image{
+        padding:15px 40px 0 40px;
+    }
+    
+    .left .left-image .add-btn a{
+        padding:7px 89px;
+        
+    }
+}
+@media only screen and (min-width:992px) and (max-width:1200px){
+    .left .left-image{
+        padding:15px 20px 0 20px;
+    }
+    .left .left-image .add-btn a{
+       padding:7px 78px;
+    }
+    .right{
+        padding: 0 40px 0 50px;
+    }
+    .right .player-info span{
+        margin-top: 10px;
+        font-size:16px;
+    }
+    .right .player-info .text{
+        flex-direction: column;
+    }
+    .right .player-info .text span:nth-child(2){
+        margin-left: 0;
+        
+    }
+    .right .player-info .border-bottom{
+        top:65px;
+    }
+}
+@media only screen and (min-width:768px) and (max-width:992px){
+    .left .player-image{
+        padding:15px 15px 0 15px;
+        
+    }
+    .left .left-image{
+        padding:0 ;
+    }
+    .left .left-image .add-btn a{
+       padding:7px 57px;
+       font-size: 16px;
+    }
+    .right{
+        padding: 0 40px 0 50px;
+    }
+    .left .left-image .dropdown .form-select{
+        font-size: 14px;
+    }
+    .right .player-info span{
+        margin-top: 10px;
+        font-size:16px;
+    }
+    .right .player-info .text{
+        flex-direction: column;
+    }
+    .right .player-info .text span:nth-child(2){
+        margin-left: 0;
+        
+    }
+    .right .player-info .border-bottom{
+        top:65px;
+    }
+}
+
+@media only screen and (min-width:567px) and (max-width:768px){
+    .left .left-image .add-btn a{
+        padding:7px 80px;
+     }
+    .right{
+        padding: 0 15px 0 15px;
+        margin-top: 120px;
+    }
+}
+@media only screen and (max-width:567px){
+    .left .left-image{
+        padding:15px 25px 0 25px;
+    }
+    .left .left-image .add-btn a{
+        padding:7px 87px;
+        font-size: 13px;
+     }
+    .right{
+        padding: 0 15px 0 15px;
+        margin-top: 120px;
+    }
+    .right .player-info span{
+        margin-top: 10px;
+        font-size:16px;
+    }
+    .right .player-info .text{
+        flex-direction: column;
+    }
+    .right .player-info .text span:nth-child(2){
+        margin-left: 0;
+        
+    }
+    .right .player-info .border-bottom{
+        top:65px;
+    }
 }

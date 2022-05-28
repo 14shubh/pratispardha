@@ -158,7 +158,7 @@
     }
     
 }
-@media only screen and (min-width: 280px) and (max-width:567px) {
+@media only screen and (max-width:567px) {
     .social-icon{
         padding:5px 10px;
         flex-direction:column-reverse;

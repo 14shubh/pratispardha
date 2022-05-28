@@ -1,4 +1,14 @@
-.heading{
+.about{
+  padding: 60px 0;
+}
+.banner{
+  height: 450px;
+}
+.banner img{
+  height: 100%;
+  object-fit: cover;
+}
+/* .heading{
   text-align: center;
   width: fit-content;
   position: relative;
@@ -44,25 +54,31 @@
   -moz-transform: translate(-50%) rotate(45deg);
   -ms-transform: translate(-50%) rotate(45deg);
   -o-transform: translate(-50%) rotate(45deg);
+} */
+.heading{
+  margin-top: 110px;
+  margin-bottom: 70px;
+}
+.team{
+  margin-top: 110px;
 }
 .paragraph p{
   text-align: justify;
   font-size: 18px;
-  font-family: poppins;
   margin-top: 40px;
   line-height: 35px;
   color: black;
 }
-.row{
-  width: 100%; margin: auto; margin-top: 60px; margin-bottom: 40px;justify-content: center;
+.card .card-body p{
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
 }
-
-.card{
-  width: 200px;height: 250px;
+.card .card-img{
+  max-height: 190px;
+  height: 100%;
+  background: #333;
 }
-.card.cardimg{
-  width: 200px; height: 150px;
-}
-.card-text{
-  text-align: center; font-size: 16px; font-family: poppins;
+.card .card-img img{
+  height: 100%;
 }

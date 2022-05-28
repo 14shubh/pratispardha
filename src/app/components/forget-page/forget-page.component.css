@@ -1,20 +1,25 @@
 .forget{
     margin:150px auto;
-    padding: 15px 15px;
-    max-width:350px;
-    /* background:rgb(172, 172, 172); */
-    /* display: flex;
-    justify-content:center;  */
+    padding: 30px 25px;
+    max-width:390px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    position:relative;
 }
+.forget .heading{
+    margin-top: 20px;
+}
+.forget .heading h2{
+    font-size: 20px; 
+}  
+
 .forget .email{
     width: 100%;
     margin: 30px 0;
 }
-.forget .email span{
-    font-size: 18px;
+.forget .email p{
+    font-size: 12px;
     letter-spacing: 1px;
-    font-weight: 500;
+    text-align: justify;
 }
 .forget .email .form-group{
     margin: 30px 0;
@@ -45,4 +50,16 @@ margin-top:10px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
+}
+.fa-circle-user{
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    font-size: 68px;
+    color: rgb(20,79,133);
 }

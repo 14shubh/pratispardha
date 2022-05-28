@@ -1,9 +1,14 @@
 <div class="forget">
+    <div class="heading">
+        <h2>Reset Password</h2>
+    </div>
     <div class="email">
-        <span>Enter your email :</span>
+        <i class="fa-solid fa-circle-user"></i>
+
+        <p>Enter your email address below and we'll send you a link to reset your password</p>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" [(ngModel)]="email" class="form-control" id="email" placeholder="Enter email">
+            <input type="email" [(ngModel)]="email" class="form-control" id="email" placeholder="Enter email" autocomplete="off">
         </div>
         <div class="submit-btn">
             <a (click)="sendMail()"class="submit">Submit</a>

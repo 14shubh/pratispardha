@@ -158,8 +158,56 @@
 .event-card .card-content .overlay-box .overlay-btn a:hover::before{
     width: 100%;
 }
-
-@media only screen and (min-width:320px) and (max-width: 567px) {
+@media only screen and (min-width:1200px) and (max-width:1400px){
+    .event-card .card-content .card-body{
+        padding: 10px;
+    }
+    .event-card .card-content .primary-text h3{
+        font-size: 18px;
+    }
+    .event-card .card-content .primary-text span{
+        font-size: 13px;
+        
+    }
+    .event-card .card-content .overlay-box .overlay-content h3{
+        font-size: 15px;
+    }
+    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
+        
+        font-size: 11px;
+    }
+    .event-card .card-content .overlay-box .overlay-btn a{
+        font-size: 12px;
+        padding: 5px 14px;
+    }
+}
+@media only screen and (min-width: 567px) and (max-width:768px){
+    .events .event-card{
+        padding: 20px 10px;
+    }
+    .event-card .card-content .card-body{
+        padding: 10px;
+    }
+    .event-card .card-content .primary-text h3{
+        font-size: 15px;
+    }
+    .event-card .card-content .primary-text span{
+        font-size: 12px;
+        
+    }
+    .event-card .card-content .overlay-box .overlay-content h3{
+        font-size: 16px;
+    }
+    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
+        font-size: 11px;
+    }
+   
+    .event-card .card-content .overlay-box .overlay-btn a{
+        font-size: 12px;
+        padding: 5px 14px;
+    }
+}
+@media only screen and (min-width:280px) and (max-width: 567px) {
     .heading h1{
         font-size:20px;
     }
@@ -171,10 +219,7 @@
         font-weight: 600;
         font-size: 18px;
     }
-    /* .title .underline{
-        width: 185px;
-    } */
-
+    
     .events {
         padding: 0 !important;   
     }
@@ -182,24 +227,36 @@
         padding: 20px 30px;
     }
     .event-card .card-content .primary-text h3{
-        font-size: 25px;
+        font-size: 18px;
+    }
+    .event-card .card-content .primary-text h3 span{
+        font-size: 14px;
     }
     .event-card .card-content .overlay-box{
-        padding: 45px 25px 20px 25px;
+        padding: 45px 15px 30px 15px;
     }
     
     .event-card .card-content .overlay-box .overlay-content h3{
-        font-size: 18px;
+        font-size: 16px;
     }
     .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
-        font-size: 18px;
+        font-size: 12px;
     }
     .event-card .card-content .overlay-box .overlay-content .organiser{
         margin: 50px 0;
     }
     
     .event-card .card-content .overlay-box .overlay-btn{
-        margin-top: 50px;
+        margin-top: 30px;
     }
+    .event-card .card-content .overlay-box .overlay-btn a{
+        padding:5px 10px;
+        font-size:12px;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+}
     
 }

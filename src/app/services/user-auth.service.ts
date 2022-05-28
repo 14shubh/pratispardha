@@ -83,7 +83,7 @@ export class UserAuthService {
   {
     let url=this.serverUrl +"/payment/get-payment"
       return this._http.post<any>(url, {amount:amount});
-  }
+  } 
   public saveQuery(name:string,email:string,mobile:string,query:string):Observable<any>{
     let url=this.serverUrl+"/contact/contact";
     return this._http.post<any>(url,{name:name,email:email,mobile:mobile,query:query});
