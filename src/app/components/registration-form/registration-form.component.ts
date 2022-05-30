@@ -24,16 +24,16 @@ public   async ragisterForTournament(){
       if((this.tournamentDates.indexOf(this.eventData.tournamentStartDate.toString()))==(-1)){
         if((this.eventData.tournamentApplyDate)<=(new Date().getTime())){
           if((this.eventData.tournamentEndDate)>=(new Date().getTime())){
-            // this.userAuth.createOrder(this.eventData.tournamentFees).subscribe(data=>{
-            //   var options = {
-            //     "key": "rzp_test_k45BWvh7O4E1Os",
-            //     "amount": "1000",
-            //     "currency": "INR",
-            //     "name": "Acme Corp",
-            //     "description": "Test Transaction",
-            //     "image": "https://example.com/your_logo",
-            //     "order_id": data.id,
-            //   'handler':async (response:any)=>{
+            this.userAuth.createOrder(this.eventData.tournamentFees).subscribe(data=>{
+              var options = {
+                "key": "rzp_test_k45BWvh7O4E1Os",
+                "amount": "1000",
+                "currency": "INR",
+                "name": "Acme Corp",
+                "description": "Test Transaction",
+                "image": "https://example.com/your_logo",
+                "order_id": data.id,
+              'handler':async (response:any)=>{
 
             if(!this.flag){
                       await  this.userAuth.createTeam(this.teamName,this.userId).subscribe(data=>{
@@ -53,29 +53,29 @@ public   async ragisterForTournament(){
                     }
 
 
-        //           },
+                  },
 
-        //         "prefill": {
-        //             "name": this.name,
-        //             "email": this.email,
-        //             "contact": this.mobile
-        //         },
-        //         "notes": {
-        //             "address": "Razorpay Corporate Office"
-        //         },
-        //         "theme": {
-        //             "color": "#3399cc"
-        //         }
+                "prefill": {
+                    "name": this.name,
+                    "email": this.email,
+                    "contact": this.mobile
+                },
+                "notes": {
+                    "address": "Razorpay Corporate Office"
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
 
-        //     };
+            };
 
 
-        //     var rzp1 = new  Razorpay(options);
-        //     rzp1.on('payment.failed', function (response: { error: { code: any; description: any; source: any; step: any; reason: any; metadata: { order_id: any; payment_id: any; }; }; }){
-        // });
-        //     rzp1.open()
+            var rzp1 = new  Razorpay(options);
+            rzp1.on('payment.failed', function (response: { error: { code: any; description: any; source: any; step: any; reason: any; metadata: { order_id: any; payment_id: any; }; }; }){
+        });
+            rzp1.open()
 
-        //   })
+          })
 
           }
           else

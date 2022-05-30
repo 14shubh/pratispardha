@@ -25,10 +25,13 @@ export class NavbarComponent implements OnInit {
    }
  
    public notify(notification:any){
+    
     notification.classList.toggle('active');
 
     this._user.viewProfile(sessionStorage.getItem('UserLoginId')).subscribe(data=>{
       console.log('first data ',data.team);
+      this.noticfication=[];
+
       for(let id of data.team){
         console.log("data: "+id.tournamentId._id+"    date: "+id.tournamentId.tournamentStartDate)
         this.playerteamTournamentId.push(id.tournamentId._id);
@@ -41,12 +44,11 @@ export class NavbarComponent implements OnInit {
           this.noticfication.push({_id:event._id,eventName:event.tournamentId.tournamentName,ownerName:data.name,ownerImage:data.image,teamId:event.teamId._id,tournamentId:event.tournamentId._id,tournamentStartDate:event.tournamentId.tournamentStartDate})
         }); 
       }
-      this.noticfication=[]
+      
       console.log('second notification data ',this.noticfication)
- 
     })
    }
-   acceptRequest(request:any){
+    acceptRequest(request:any){
      
      console.log(request)
      if((request.tournamentStartDate)>(new Date()).getTime()){
@@ -92,10 +94,16 @@ export class NavbarComponent implements OnInit {
        })
      }
    }
+
+   public ownerProfile(ownerId:string){
+    this._router.navigate(['view-profile/'+ownerId+'/'+false]);
+   }
+
     public clearAll(){
       this.noticfication = [];
     }
   ngOnInit(): void {
+    
   }
  
 }

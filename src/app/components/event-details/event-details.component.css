@@ -4,21 +4,41 @@
 .left, .right, .other-info {
     padding: 20px 50px;
 }
+.left .event-image{
+    max-height:500px;
+    height:100%;
+    width:100%;
+}
 .left .event-image img{
     width: 100%;
     height: 100%;
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -ms-border-radius:3px;
+    -o-border-radius:3px;
 }
 
 .right .event-details{
     padding:15px 0;
 }
+/* .right .event-details .event-title{
+    margin: 20px 0;
+} */
 .right .event-details .event-title h2{
     font-size: 28px;
+    letter-spacing:1px;
 }
-.right .event-details .event-content p, .right .event-details .event-orgnizer p, .right .event-details .location p{
+
+.right .event-details .event-content p, .right .event-details .event-orgnizer p, .right .event-details .location p, .right .tournament-date p{
     font-size: 15px;
     letter-spacing: 1px;
-    font-weight:500;
+    font-weight:600;
+    text-transform: capitalize;
+}
+.right .event-details .event-content p span, .right .event-details .event-orgnizer p span, .right .event-details .location p span, .right .tournament-date p span{
+    font-weight: 500;
+    margin-left: 10px;
 }
 .right .event-details .event-content, .right .event-details .event-orgnizer{
     margin: 30px 0;
@@ -26,7 +46,7 @@
 .right .event-details .event-content p i, .right .event-details .event-orgnizer p i, .right .event-details .location p i{
     margin-right: 20px;
 }
-/* .right .event-details .event-content p */
+
 
 .right .event-details .event{
     display:flex;
@@ -46,13 +66,16 @@
     font-weight:500;
     text-transform: capitalize;
 }
-
+.right .register-btn{
+    margin-top:25px;
+}
 .right .register-btn .register{
     background: var(--blue-radial-gradient);
     text-decoration: none;
-    font-size: 14px;
-    padding : 5px 20px;
+    font-size: 18px;
+    padding : 5px 25px;
     color: #fff;
+    letter-spacing: 1px;
     cursor: pointer;
 }
 

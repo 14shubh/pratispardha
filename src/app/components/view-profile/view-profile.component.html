@@ -11,7 +11,7 @@
                     <small>{{player.playerType}}</small>
                 </div>
 
-                <div class="dropdown">
+                <div *ngIf='status' class="dropdown">
                     <select  #mySelect name="tournament_name" id="tournament_name" class="form-select" aria-label="Default select example">
                         <option value="1" selected disabled>Select tournament</option>
                         <option value="{{events._id}}" *ngFor="let events of tournaments">{{events.name}}</option>
@@ -19,7 +19,7 @@
                     </select>
                 </div>
 
-                <div (click)="sendRequest()"class="add-btn">
+                <div *ngIf='status' (click)="sendRequest()"class="add-btn">
                     <a>Add Player</a>
                 </div>
             </div>

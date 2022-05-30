@@ -55,7 +55,7 @@ const routes: Routes = [
     component: PlayerListComponent,
   },
   {
-    path:'view-profile/:playerId',
+    path:'view-profile/:playerId/:status',
     component: ViewProfileComponent,
     canActivate:[AuthGuard]
   },

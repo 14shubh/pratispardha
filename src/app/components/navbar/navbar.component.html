@@ -1,34 +1,40 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" routerLink="home">PRATI<span>SPARDHA</span></a>
+
+        
+
+
+
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
             data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav m-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" routerLink="home">HOME</a>
+                    <a class="nav-link single" routerLink="home">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="event">EVENTS</a>
+                    <a class="nav-link single" routerLink="event">EVENTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="player-list">PLAYERS</a>
+                    <a class="nav-link single" routerLink="player-list">PLAYERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="about-us">ABOUT US</a>
+                    <a class="nav-link single" routerLink="about-us">ABOUT US</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="contact">CONTACT</a>
+                    <a class="nav-link single" routerLink="contact">CONTACT</a>
                 </li>
             </ul>
             <ul class="navbar-nav right-nav">
                 <li *ngIf="!isLoggedIn()" class="nav-item">
                     <a class="nav-link" routerLink="sign-in">SIGNIN</a>
                 </li>
-                <li *ngIf="!isLoggedIn()" class="nav-item">
+                <li *ngIf="!isLoggedIn()" class="nav-item single">
                     <a class="nav-link" routerLink="sign-up">SIGNUP</a>
                 </li>
                 <!-- <li *ngIf="isLoggedIn()" (click)="signout()" class="nav-item">
@@ -37,35 +43,38 @@
                 <li class="nav-item" *ngIf="isLoggedIn()"  (click)="notify(notification)">
                     <a class="nav-link"> <i class="fa fa-bell" aria-hidden="true"></i></a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item"> -->
                     <!-- <a routerLink="user-profile" class="nav-link"><i class="fa fa-user-circle user-icon"
                     aria-hidden="true"></i></a> -->
 
-                    <div class="dropdown">
-                       
-                        <a class="nav-link dropdown-toggle" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                class="fa fa-user-circle user-icon" aria-hidden="true"></i></a>
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <ul>
-                                <li class="nav-item">
-                                    <a routerLink="profile" class="dropdown-item">Profile</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="dropdown-item">Teams</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a routerLink="tournament-history" class="dropdown-item">Tournament history</a>
-                                </li>
-                                <li *ngIf="isLoggedIn()" (click)="signout()" class="nav-item">
-                                    <a class="nav-link" routerLink="sign-out">SIGN OUT</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
+                    
+                <!-- </li> -->
             </ul>
+        </div>
+
+        <div class="dropdown sticky-top">
+                       
+            <a class="nav-link dropdown-toggle" role="button" id="userProfile"
+                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user-circle user-icon" aria-hidden="true"></i>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="userProfile">
+                <ul>
+                    <li class="nav-item">
+                        <a routerLink="profile" class="dropdown-item">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="dropdown-item">Teams</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="tournament-history" class="dropdown-item">Tournament history</a>
+                    </li>
+                    <li *ngIf="isLoggedIn()" (click)="signout()" class="nav-item">
+                        <a class="nav-link" routerLink="sign-out">SIGN OUT</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
@@ -81,7 +90,7 @@
                 <img src="{{Notify.ownerImage}}" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>{{Notify.ownerName}}</span> is requesting to play in <span>{{Notify.eventName}}</span> tournament</small>
+                <small><span (click)="ownerProfile(Notify.ownerId)">{{Notify.ownerName}}</span> is requesting to play in <span>{{Notify.eventName}}</span> tournament</small>
                 <div class="notification-btn">
                     <a (click)="acceptRequest(Notify)"id="accept">Accept</a>
                     <a id="reject" (click)="reject(Notify._id, i)">Reject</a>

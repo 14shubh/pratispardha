@@ -18,6 +18,7 @@ export class ViewProfileComponent implements OnInit {
   teamId:string='';
   tournaments:any[]=[];
   temp:any[]=[];
+  status:boolean=false;
 
   constructor(private _activeRouter:ActivatedRoute,private spin:NgxSpinnerService,private _userAuth:UserAuthService ) {
    }
@@ -49,6 +50,8 @@ export class ViewProfileComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.status=this._activeRouter.snapshot.params['status'];
+
     this.spin.show();
     console.log(this._activeRouter.snapshot.params['playerId'])
     this._userAuth.viewProfile(this._activeRouter.snapshot.params['playerId']).subscribe(data=>{

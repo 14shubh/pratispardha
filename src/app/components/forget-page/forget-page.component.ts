@@ -7,10 +7,12 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
   styleUrls: ['./forget-page.component.css']
 })
 export class ForgetPageComponent implements OnInit {
-  email:string = "";
+  email:string ="";
+  status:boolean=true;
   constructor(private _userAuth: UserAuthService) { }
 
   sendMail(){
+    this.status=false;
     console.log(this.email);
       this._userAuth.sendMail(this.email).subscribe(data=>{
         console.log(data);

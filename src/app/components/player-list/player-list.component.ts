@@ -39,7 +39,7 @@ export class PlayerListComponent implements OnInit {
 
   public profile(playerId:string){
     console.log(playerId)
-    this._router.navigate(['view-profile/'+playerId]);
+    this._router.navigate(['view-profile/'+playerId+'/'+true]);
     
   }
 

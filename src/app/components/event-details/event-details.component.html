@@ -2,11 +2,7 @@
   <div class="row event-data">
     <div class="col-md-6 left">
       <div class="event-image">
-        <img
-          src="{{event.banner}}"
-          alt="event image"
-          class="img-fluid"
-        />
+        <img src="{{event.banner}}" alt="event image" class="img-fluid" />
       </div>
     </div>
     <div class="col-md-6 right">
@@ -19,27 +15,27 @@
 
           <div class="event-date">
             <p>Registration date</p>
-            <p>Start:{{event.tournamentApplyDate|date:'dd-MM-yyyy'}} | End:{{event.tournamentEndDate|date:'dd-MM-yyyy'}}</p>
+            <p>Start: <span>{{event.tournamentApplyDate|date:'dd-MM-yyyy'}} | End:{{event.tournamentEndDate|date:'dd-MM-yyyy'}}</span></p>
 
           </div>
         </div>
         <div class="tournament-date event">
-          <i class="fa-regular fa-cricket-bat-ball"></i>
-          <p>Tournament date :{{event.tournamentStartDate|date:'dd-MM-yyyy'}}</p>
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+          <p>Tournament date :<span>{{event.tournamentStartDate|date:'dd-MM-yyyy'}}</span></p>
         </div>
         <div class="event-orgnizer event">
           <i class="fas fa-user-tie"></i>
-          <p>organiser : {{event.orgainiserId.name}}</p>
+          <p>organiser : <span>{{event.orgainiserId.name}}</span></p>
         </div>
         <div class="location event">
           <i class="fa fa-location-arrow" aria-hidden="true"></i>
-          <p>Venue :{{event.tournamentAddress}}</p>
+          <p>Venue : <span>{{event.tournamentAddress}}</span></p>
         </div>
         <span class="note">each team will pay {{event.tournamentFees}}/- as participating fee.</span>
       </div>
 
       <div *ngIf="status==1" class="register-btn">
-        <a class="register"  (click)="register(event._id)">Register</a>
+        <a class="register" (click)="register(event._id)">Register</a>
       </div>
     </div>
   </div>
@@ -67,12 +63,12 @@
           1. Documents of all the players of the team should be compulsorily
           submitted.<br>
           2. If any kind of indiscipline is found in the tournament then
-          that player will be immediately expelled from the tournament.<br> 
+          that player will be immediately expelled from the tournament.<br>
           3. It is mandatory for all the players of the team to report on the field 1
           hour before the match. <br>
           4. During the tournament, if any player is found
           to be doing any kind of undesirable activity or consuming drugs, he
-          will be immediately expelled from the tournament.<br> 
+          will be immediately expelled from the tournament.<br>
           5. All players take care of their own belongings Sports complex does not take
           responsibility for this.
         </span>
@@ -85,8 +81,8 @@
       </div>
       <div class="content">
         <span>
-          1. winning team : cash prize ₹ {{event.firstPrize}}/- and  designer trophy.<br>
-          2. Runner’s team : cash prize ₹ {{event.secondPrize}}/- and designer trophy.<br> 
+          1. winning team : cash prize ₹ {{event.firstPrize}}/- and designer trophy.<br>
+          2. Runner’s team : cash prize ₹ {{event.secondPrize}}/- and designer trophy.<br>
           3. Semi finalist : cash prize ₹ {{event.thirdPrize}}/- and Designer trophy. <br>
         </span>
       </div>
