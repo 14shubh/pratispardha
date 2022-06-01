@@ -9,8 +9,8 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class UserAuthService {
- //serverUrl:string="https://spardhaa.herokuapp.com"
-serverUrl:string="http://localhost:3000"
+ serverUrl:string="https://spardhaa.herokuapp.com"
+//serverUrl:string="http://localhost:3000"
   constructor(private _http:HttpClient) { }
 
   public register(user:User):Observable<User> {
