@@ -23,8 +23,8 @@
           <div class="form-group name">
             <i class="fa-solid fa-user"></i>
             <input [(ngModel)]="name" pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" required #Name="ngModel" type="text" class="form-control" id="name" placeholder="Name">
-           <small id="helpId" *ngIf="Name.errors?.['required']&&(Name.touched||Name.dirty)" >Name is required</small>
-           <small *ngIf="Name.errors?.['pattern']&&(Name.touched||Name.dirty)" id="halpId">Please Enter Valid Name</small>
+           <small id="helpId"   *ngIf="Name.errors?.['required']&&(Name.touched||Name.dirty)" >Name is required</small>
+           <small id="helpId" *ngIf="Name.errors?.['pattern']&&(Name.touched||Name.dirty)">Please Enter Valid Name</small>
           </div>
           <div class="form-group input-data mobile">
             <i class="fa-solid fa-mobile"></i>

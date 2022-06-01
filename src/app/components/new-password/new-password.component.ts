@@ -19,7 +19,7 @@ export class NewPasswordComponent implements OnInit {
     if(this.password1==this.password2){
       this.user.newPassword(this.UserId,this.password1).subscribe(data=>{
         alert("success");
-        console.log(data)
+
       },
       err=>{
         alert("error");

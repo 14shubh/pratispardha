@@ -29,24 +29,17 @@ export class NavbarComponent implements OnInit {
     notification.classList.toggle('active');
 
     this._user.viewProfile(sessionStorage.getItem('UserLoginId')).subscribe(data=>{
-      console.log('first data ',data.team);
-      this.noticfication=[];
-
-      for(let id of data.team){
-        console.log("data: "+id.tournamentId._id+"    date: "+id.tournamentId.tournamentStartDate)
+    this.noticfication=[];
+     for(let id of data.team){
         this.playerteamTournamentId.push(id.tournamentId._id);
         this.playerTeamTournamentDate.push(id.tournamentId.tournamentStartDate);
       }
-      
-
-      for(let event of data.request){
+        for(let event of data.request){
         this._user.viewProfile(event.teamId.ownerId).subscribe(data=>{
-          this.noticfication.push({_id:event._id,eventName:event.tournamentId.tournamentName,ownerName:data.name,ownerImage:data.image,teamId:event.teamId._id,tournamentId:event.tournamentId._id,tournamentStartDate:event.tournamentId.tournamentStartDate})
+          this.noticfication.push({ownerId:event.teamId.ownerId, _id:event._id,eventName:event.tournamentId.tournamentName,ownerName:data.name,ownerImage:data.image,teamId:event.teamId._id,tournamentId:event.tournamentId._id,tournamentStartDate:event.tournamentId.tournamentStartDate})
         }); 
       }
-      
-      console.log('second notification data ',this.noticfication)
-    })
+       })
    }
     acceptRequest(request:any){
      
@@ -85,7 +78,9 @@ export class NavbarComponent implements OnInit {
       this._user.rejectRequest(this.UserId,requestId).subscribe(data=>{
         if(data){
           console.log("rejected");
+          console.log(data)
           this.noticfication.splice(index,1);
+          console.log(this.noticfication)
         }else{
           console.log("not rejected");
         }
@@ -96,7 +91,9 @@ export class NavbarComponent implements OnInit {
    }
 
    public ownerProfile(ownerId:string){
-    this._router.navigate(['view-profile/'+ownerId+'/'+false]);
+   // window.location.href ="https://pratispardha.herokuapp.com/"+'view-profile/'+ownerId+'/'+false;
+    window.location.href ="http://localhost:4200/"+'view-profile/'+ownerId+'/'+false;
+    
    }
 
     public clearAll(){

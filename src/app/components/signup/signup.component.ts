@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
         }
       
     if(data.message=="sucesss"){
-      this.toast.info("Checku your Email for verification");
+      this.toast.info("Check your Email for verification");
 
       this._router.navigate(['sign-in']);}
     },(err)=>{

@@ -41,13 +41,13 @@ export class RegistrationFormComponent implements OnInit {
                           this.flag=true;
                         this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
                           this.toast.success("Success");
-                          window.location.href ="http://localhost:4200/home";
+                          window.location.href ="https://pratispardha.herokuapp.com/home";
                          });
                 })
                         }else{
                         this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
                           this.toast.success("Success");
-                          window.location.href ="http://localhost:4200/home";
+                          window.location.href ="https://pratispardha.herokuapp.com/home";
                         })
                       }
   

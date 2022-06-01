@@ -25,9 +25,10 @@
                         </div>
                     <div class="form-group">
                         <i class="fa-solid fa-unlock-keyhole"></i>
-                        <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" class="form-control" placeholder="Password"
+                        <input type="password" minlength="8" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" class="form-control" placeholder="Password"
                             aria-describedby="helpId">
-                        <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched" >Please enter password</small>
+                        <small id="helpId" *ngIf="pass.errors?.['required'] && (pass.touched||pass.dirty)" >Please enter password</small>
+                        <small id="helpId" *ngIf="pass.errors?.['minlength']&&(pass.touched||pass.dirty)">Password atleast 8 character long</small>
                     </div>
                     <div class="form-group">
                         <i class="fa-solid fa-mobile"></i>
@@ -40,9 +41,9 @@
                         <i class="fa-solid fa-user-plus"></i>
                         <select (change)="playerType($event)" required name="player_type" id="player-type" class="form-select">
                             <option name="select" value="0">Select an option</option>
-                            <option value="right-hand-batsman">Batsman</option>
-                            <option value="left-hand-batsman">Bowler</option>
-                            <option value="right-hand-fast-baller">All rounder</option>
+                            <option value="Batsman">Batsman</option>
+                            <option value="Bowler">Bowler</option>
+                            <option value="All rounder">All rounder</option>
                             <!-- <option value="left-hand-fast-baller">Left Hand Fast Bowler</option>
                             <option value="right-hand-medium-baller">Right Hand Medium Bowler</option>
                             <option value="left-hand-medium-baller">Left Hand Medium Bowler</option>

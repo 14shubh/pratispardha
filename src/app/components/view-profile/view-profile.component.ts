@@ -50,6 +50,7 @@ export class ViewProfileComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(this._activeRouter.snapshot.params['status'])
     this.status=this._activeRouter.snapshot.params['status'];
 
     this.spin.show();
