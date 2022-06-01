@@ -32,7 +32,7 @@ export class EventsComponent implements OnInit {
 
   public read(eventId:string){
     console.log(eventId);
-    this._router.navigate(['event-details/'+eventId]);
+    this._router.navigate(['event-details/'+eventId+"/"+1]);
   }
   public register(event:any){
     console.log(event)

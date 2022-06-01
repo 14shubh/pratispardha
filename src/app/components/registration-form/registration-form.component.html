@@ -10,36 +10,42 @@
             <h2>tournaments details</h2>
           </div>
           <div class="form-group">
-            <input [value]="eventData.tournamentName" type="text" id="tournament_name" class="form-control" placeholder="Tournament Name">
+            <input   [value]="eventData.tournamentName" type="text" id="tournament_name" class="form-control"  placeholder="Tournament Name" disabled>
+          
           </div>
           <div class="form-group">
-            <input [value]="eventData.tournamentAddress" type="text" id="tournament_venue" class="form-control" placeholder="Tournament Venue">
+            <input [value]="eventData.tournamentAddress" type="text" id="tournament_venue" class="form-control" placeholder="Tournament Venue" disabled>
           </div>
           <div class="form-group">
-            <input value="{{eventData.tournamentStartDate|date:'dd-MM-yyyy'}}" type="text" id="tournament_date" class="form-control" placeholder="Tournament Date">
+            <input value="{{eventData.tournamentStartDate|date:'dd-MM-yyyy'}}" type="text" id="tournament_date" class="form-control" placeholder="Tournament Date" disabled>
           </div>
           <div class="form-group">
-            <input [value]="eventData.tournamentFees" type="text" id="tournament_fess" class="form-control" placeholder="Tournament Entry Fess">
+            <input [value]="eventData.tournamentFees" type="text" id="tournament_fess" class="form-control" placeholder="Tournament Entry Fess" disabled>
           </div>
           <div class="title">
               <h2>Team details</h2>
           </div>
           <div class="form-group">
-              <input [(ngModel)]="teamName" type="text" id="team_name" class="form-control" placeholder="Team Name">
+              <input (keyup)="checkTeam()" [(ngModel)]="teamName" type="text" #team_name="ngModel" id="team_name" class="form-control" placeholder="Team Name" [disabled]="flag" required minlength="10">
+              <small *ngIf=" (!(teamName==''))&&!(canApply)&&team_name.dirty" style="color:red" >Team name is Already exist </small>
+              <small  *ngIf="(!(team_name.errors?.['required'])&&!(team_name.errors?.['minlength']))&&(canApply)&&team_name.dirty" style="color:green" >Team name is Avilable </small>
+              <small *ngIf="(teamName=='')&&team_name.touched" style="color:red" >Team name is Required </small>
+              <small *ngIf="team_name.errors?.['minlength']" style="color:red" >Teaa Name Must be 10 Character long </small>
+            
             </div>
             <div class="form-group">
-              <input [value]="teamData.name" type="text" id="owner_name" class="form-control" placeholder="Team Owner Name">
+              <input [value]="teamData.name" type="text" id="owner_name" class="form-control" placeholder="Team Owner Name" disabled >
             </div>
             <div class="form-group">
-              <input [value]="teamData.email" type="text" id="owner_email" class="form-control" placeholder="Owner Email">
+              <input [value]="teamData.email" type="text" id="owner_email" class="form-control" placeholder="Owner Email" disabled>
             </div>
             <div class="form-group">
-              <input [value]="teamData.mobile" type="text" id="owner_no." class="form-control" placeholder="Owner Contact Number">
+              <input [value]="teamData.mobile" type="text" id="owner_no." class="form-control" placeholder="Owner Contact Number" disabled>
             </div>
         </div>
         <div class="form-btn">
-            <a class="cancel-btn">Cancel</a>
-            <a (click)="ragisterForTournament()"class="register-btn">Register</a>
+            <button class="cancel-btn">Cancel</button>
+            <button (click)="ragisterForTournament()"class="register-btn" [disabled]="team_name.errors?.['minlength']||team_name.errors?.['required']||!(canApply)" >Register</button>
         </div>
   </div>
 </div>

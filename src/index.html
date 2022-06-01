@@ -16,7 +16,17 @@
 
 
 
-
+  <script>
+    function hideNotification(){
+      //alert('called...');
+      let obj2 = document.getElementById("notification");
+        if(obj2){
+          if(obj2.classList.contains('active'))
+             obj2.classList.toggle('active');
+        }
+    }
+    
+  </script>
   <!-- <script>
       $( document ).ready(function() {
    

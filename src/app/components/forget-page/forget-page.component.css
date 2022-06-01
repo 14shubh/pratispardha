@@ -31,11 +31,18 @@ margin-top:10px;
     box-shadow:none;
     
 }
-.forget .submit-btn{
+button:disabled,button[disabled]{
+    background-color: #cccccc;
+    cursor:not-allowed !important;
+  }
+
+button{
     width: 100%;
     text-align: center;
+    border: none;
 
 }
+ 
 .forget .submit-btn .submit{
     background: var(--blue-radial-gradient);
     display: block;

@@ -14,7 +14,8 @@ export class User {
           public playerId:string,
           public tournamentId:string,
           public teamId:string,
-          public resquestId:string
+          public resquestId:string,
+          public message:string
          
           ){
  

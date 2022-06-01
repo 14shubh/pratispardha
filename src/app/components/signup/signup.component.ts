@@ -11,7 +11,7 @@ import { User} from '../../model/user'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  user:User = new User('','','','','','','','','','','','','','');
+  user:User = new User('','','','','','','','','','','','','','','');
 
   constructor(private _userAuth: UserAuthService,private toast:ToastrService, private _router: Router) { }
 
@@ -27,12 +27,18 @@ export class SignupComponent implements OnInit {
     //  alert("Please Select the type")
     this.toast.info("Please Select The Type")
     console.log(this.user);
-    this._userAuth.register(this.user).subscribe((data)=>{
-      console.log(data);
-      this.toast.success("Signup Success");
+    this._userAuth.register(this.user).subscribe(data=>{
+
+        if(data.message=='user already found'){
+          this.toast.warning("User Already Exist ");
+           this._router.navigate(['sign-in']);
+
+        }
+      
+    if(data.message=="sucesss"){
       this.toast.info("Checku your Email for verification");
 
-      this._router.navigate(['sign-in']);
+      this._router.navigate(['sign-in']);}
     },(err)=>{
       console.log(err);
     })

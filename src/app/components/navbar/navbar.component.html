@@ -79,7 +79,7 @@
     </div>
 </nav>
 
-<div class="notification-panel" #notification id="notification">
+<div onmouseleave="hideNotification()" class="notification-panel" #notification id="notification">
     <div class="notification-title sticky-top">
         <h2>Notifications</h2>
         <span (click)="clearAll()">Clear all</span>

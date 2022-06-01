@@ -1,4 +1,8 @@
  
+button:disabled,button[disabled]{
+  background-color: #cccccc;
+  cursor:not-allowed !important;
+}   
 .box{
   position: relative;
   padding-top: 30px;
@@ -118,5 +122,9 @@
   color: rgb(97, 97, 97);
   font-size: 14px;
 }
+#helpId{
+  color: red;
+}
+
  
 

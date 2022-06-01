@@ -19,10 +19,22 @@ export class SigninComponent implements OnInit {
     this._router.navigate(['/sign-up']);
   }
  
-  user:User = new User('','','','','','','','','','','','','','');
+  user:User = new User('','','','','','','','','','','','','','','');
  
   public SignIn(){
     this._userAuth.login(this.user).subscribe((data) => {
+      console.log(data)
+      if(data.message=="User Not Found"){
+        this.Toast.warning("User Not Found");
+        this._router.navigate(['/sign-up']);
+        
+      }
+      if(data.message=='please verify your account'){
+        this.Toast.info("Please Complete Email Verification");
+      }
+      if(data.message=="Invalid credential"){
+        this.Toast.warning("Incorrect Password");
+      }
  
       if(data.status){
     sessionStorage.setItem('jwt_token',data.token);
@@ -31,17 +43,17 @@ export class SigninComponent implements OnInit {
         this.Toast.success("login success")
         console.log(data)
          this._router.navigate(['home']);
-      }else if(data.status=="401"){
+      } 
+      if(data.status=="401"){
         this.Toast.error("Invalid Credentials");
         console.log("not found")
       }
-      else{
-        this.Toast.error("Invalid Credentials")
-      }
+        
     },err=>{
       if(err instanceof HttpErrorResponse){
           if(err.status==500)
             // window.alert("Internal Server Error");
+            alert("calleds")
             this.Toast.warning("Internal Server Error")
       }
     })
