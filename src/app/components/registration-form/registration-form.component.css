@@ -10,6 +10,7 @@
 .registration-form .form-box .form-group {
     margin: 20px auto;
     width:550px;
+    position: relative;
 }
 /* .registration-form .form-btn a{
     background: var(--blue-radial-gradient);
@@ -19,6 +20,71 @@
     color: #fff;
     cursor: pointer;
 } */
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    resize: none;
+    outline: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+  input[required] {
+    border-color: #00bafa;
+  }
+  input[required] + label[placeholder]:before {
+    color: #00bafa;
+  }
+  input[required] + label[placeholder]:before {
+    color: #00bafa;
+    transform: translate(-15px, -20px) scale(0.9, 0.9);
+    -webkit-transform: translate(-15px, -20px) scale(0.9, 0.9);
+    -moz-transform: translate(-15px, -20px) scale(0.9, 0.9);
+    -ms-transform: translate(-15px, -20px) scale(0.9, 0.9);
+    -o-transform: translate(-15px, -20px) scale(0.9, 0.9);
+    background: #fff;
+}
+  input[required]:invalid + label[placeholder][alt]:before {
+    content: attr(alt);
+  }
+  input[required] + label[placeholder] {
+    display: block;
+    pointer-events: none;
+    line-height: 25px;
+    
+  }
+  label[placeholder]{
+      position: absolute;
+      left:15px; 
+      top: 8px;
+  }
+  input[required] + label[placeholder]:before {
+    content: attr(placeholder);
+    display: inline-block;
+    padding: 0 2px;
+    color: #898989;
+    white-space: nowrap;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(to bottom, #fff, #fff);
+    background-size: 100% 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+
+
+
+
+
+
+
 .registration-form .form-btn button{
     background: var(--blue-radial-gradient);
     margin-right: 50px;

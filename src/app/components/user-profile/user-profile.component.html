@@ -29,6 +29,7 @@
                         <span>{{UserProfile.playerType}}</span>
                     </div>
                     <div (click)="update()" class="update-btn">
+                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
                         <a  class="update">Profile Update</a>
                     </div>
                 </div>
@@ -39,22 +40,22 @@
                     </div>
                     <div class="text form-group">
                         <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile"  [disabled]="isDisabled">
-                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                        <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
                     </div>
                     <div class="text form-group">
                         <input [(ngModel)]="playerType" type="text" class="form-control" placeholder="PlayerType" [disabled]="isDisabled">
                     </div>
                     <div class="text form-group">
                         <input [(ngModel)]="age" type="text"  class="form-control" placeholder="Age"  [disabled]="isDisabled">
-                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                        <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
                     </div>
                     <div class="text form-group">
                         <input [(ngModel)]="address" type="text" class="form-control" placeholder="Address" [disabled]="isDisabled">
-                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                        <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
                     </div>
                     <div class="text form-group">
                         <input [(ngModel)]="description" type="text" class="form-control" placeholder="description" [disabled]="isDisabled">
-                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                        <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
                     </div>
                 </div>
             </div>

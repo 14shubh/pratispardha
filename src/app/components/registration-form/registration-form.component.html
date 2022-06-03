@@ -10,23 +10,35 @@
             <h2>Tournaments details</h2>
           </div>
           <div class="form-group">
-            <input   [value]="eventData.tournamentName" type="text" id="tournament_name" class="form-control"  placeholder="Tournament Name" disabled>
+            <!-- <input   [value]="eventData.tournamentName" type="text" id="tournament_name" class="form-control"  placeholder="Tournament Name" disabled> -->
+
+            <input [value]="eventData.tournamentName" required='' type="text" id="tournament_name" disabled>
+            <label alt='Tournament Name' placeholder='Tournament Name...' ></label>
           
           </div>
           <div class="form-group">
-            <input [value]="eventData.tournamentAddress" type="text" id="tournament_venue" class="form-control" placeholder="Tournament Venue" disabled>
+            <!-- <input [value]="eventData.tournamentAddress" type="text" id="tournament_venue" class="form-control" placeholder="Tournament Venue" disabled> -->
+            <input [value]="eventData.tournamentAddress" required='' type="text" id="tournament_venue"  disabled>
+            <label alt='Tournament Venue' placeholder='Tournament Venue...' ></label>
           </div>
           <div class="form-group">
-            <input value="{{eventData.tournamentStartDate|date:'dd-MM-yyyy'}}" type="text" id="tournament_date" class="form-control" placeholder="Tournament Date" disabled>
+            <!-- <input value="{{eventData.tournamentStartDate|date:'dd-MM-yyyy'}}" type="text" id="tournament_date" class="form-control" placeholder="Tournament Date" disabled> -->
+            <input value="{{eventData.tournamentStartDate|date:'dd-MM-yyyy'}}" required='' type="text" id="tournament_date"  disabled>
+            <label alt='Tournament Date' placeholder='Tournament Date...' ></label>
           </div>
           <div class="form-group">
-            <input [value]="eventData.tournamentFees" type="text" id="tournament_fess" class="form-control" placeholder="Tournament Entry Fess" disabled>
+            <!-- <input [value]="eventData.tournamentFees" type="text" id="tournament_fess" class="form-control" placeholder="Tournament Entry Fess" disabled> -->
+            <input [value]="eventData.tournamentFees" required='' type="text" id="tournament_fess"  disabled>
+            <label alt='Tournament Entry Fess' placeholder='Tournament Entry Fess...' ></label>
           </div>
           <div class="title">
               <h2>Team details</h2>
           </div>
           <div class="form-group">
-              <input (keyup)="checkTeam()" [(ngModel)]="teamName" type="text" #team_name="ngModel" id="team_name" class="form-control" placeholder="Team Name" [disabled]="flag" required minlength="10">
+              <!-- <input (keyup)="checkTeam()" [(ngModel)]="teamName" type="text" #team_name="ngModel" id="team_name" class="form-control" placeholder="Team Name" [disabled]="flag" required minlength="10"> -->
+              <input (keyup)="checkTeam()" [(ngModel)]="teamName" #team_name="ngModel"[value]="eventData.tournamentFees" required='' type="text" id="team_name"  [disabled]="flag" minlength="10" disabled>
+              <label alt='Team Name' placeholder='Team Name...' ></label>
+
               <small *ngIf=" (!(teamName==''))&&!(canApply)&&team_name.dirty" style="color:red" >Team name is Already exist </small>
               <small  *ngIf="(!(team_name.errors?.['required'])&&!(team_name.errors?.['minlength']))&&(canApply)&&team_name.dirty" style="color:green" >Team name is Avilable </small>
               <small *ngIf="(teamName=='')&&team_name.touched" style="color:red" >Team name is Required </small>
@@ -34,13 +46,20 @@
             
             </div>
             <div class="form-group">
-              <input [value]="teamData.name" type="text" id="owner_name" class="form-control" placeholder="Team Owner Name" disabled >
+              <!-- <input [value]="teamData.name" type="text" id="owner_name" class="form-control" placeholder="Team Owner Name" disabled > -->
+              <input [value]="teamData.name" required='' type="text" id="owner_name"  disabled>
+            <label alt='Team Owner Name' placeholder='Team Owner Name...' ></label>
             </div>
             <div class="form-group">
-              <input [value]="teamData.email" type="text" id="owner_email" class="form-control" placeholder="Owner Email" disabled>
+              <!-- <input [value]="teamData.email" type="text" id="owner_email" class="form-control" placeholder="Owner Email" disabled>
+               -->
+               <input [value]="teamData.email" required='' type="text" id="owner_email"  disabled>
+            <label alt='Owner Email' placeholder='Owner Email...' ></label>
             </div>
             <div class="form-group">
-              <input [value]="teamData.mobile" type="text" id="owner_no." class="form-control" placeholder="Owner Contact Number" disabled>
+              <!-- <input [value]="teamData.mobile" type="text" id="owner_no." class="form-control" placeholder="Owner Contact Number" disabled> -->
+              <input [value]="teamData.mobile" required='' type="text" id="owner_no."  disabled>
+            <label alt='Owner Contact Number' placeholder='Owner Contact Number...' ></label>
             </div>
         </div>
         <div class="form-btn">
