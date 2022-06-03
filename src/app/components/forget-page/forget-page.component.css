@@ -22,6 +22,7 @@
     text-align: justify;
 }
 .forget .email .form-group{
+    position: relative;
     margin: 30px 0;
 }
 .forget .email .form-group input{
@@ -31,6 +32,8 @@ margin-top:10px;
     box-shadow:none;
     
 }
+
+
 button:disabled,button[disabled]{
     background-color: #cccccc;
     cursor:not-allowed !important;
@@ -70,3 +73,62 @@ button{
     font-size: 68px;
     color: rgb(20,79,133);
 }
+
+
+
+input[type="email"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    resize: none;
+    outline: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+  input[type="email"][required]:focus {
+    border-color: #00bafa;
+  }
+  input[type="email"][required]:focus + label[placeholder]:before {
+    color: #00bafa;
+  }
+  input[type="email"][required]:focus + label[placeholder]:before,
+  input[type="email"][required]:valid + label[placeholder]:before {
+    transition-duration: 0.4s;
+    transform: translate(-15px, -20px) scale(0.9, 0.9);
+    -webkit-transform: translate(-15px, -20px) scale(0.9, 0.9);
+    -moz-transform: translate(-15px, -20px) scale(0.9, 0.9);
+    -ms-transform: translate(-15px, -20px) scale(0.9, 0.9);
+    -o-transform: translate(-15px, -20px) scale(0.9, 0.9);
+    background: #fff;
+}
+  input[type="email"][required]:invalid + label[placeholder][alt]:before {
+    content: attr(alt);
+  }
+  input[type="email"][required] + label[placeholder] {
+    display: block;
+    pointer-events: none;
+    line-height: 25px;
+    
+  }
+  label[placeholder]{
+      position: absolute;
+      left:15px; 
+      top: 8px;
+  }
+  input[type="email"][required] + label[placeholder]:before {
+    content: attr(placeholder);
+    display: inline-block;
+    padding: 0 2px;
+    color: #898989;
+    white-space: nowrap;
+    transition: 0.3s ease-in-out;
+    background-image: linear-gradient(to bottom, #fff, #fff);
+    background-size: 100% 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }

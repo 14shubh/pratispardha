@@ -13,7 +13,7 @@ export class NewPasswordComponent implements OnInit {
   password2:string='';
   constructor(private user:UserAuthService,private _activeRouter:ActivatedRoute) { 
     this.UserId = this._activeRouter.snapshot.params['id'];
-    alert(this.UserId);
+    // alert(this.UserId);
   }
   updatePassword(){
     if(this.password1==this.password2){
