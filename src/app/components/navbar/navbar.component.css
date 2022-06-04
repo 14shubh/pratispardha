@@ -406,6 +406,23 @@
     top:108% !important;
     left: -86px !important;
 }
-.dropdown .dropdown-menu ul li{
-    list-style:none;
+.dropdown .dropdown-menu ul{
+    padding: 0;
 }
+.dropdown .dropdown-menu ul li{
+    margin: 10px 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+/* .dropdown .dropdown-menu ul li .fa-user{
+    margin-left:3px;
+} */
+/* .dropdown .dropdown-menu ul li a{
+    padding: 0;
+    text-align: left;
+    margin-left: 10px;
+} */
+/* .dropdown .dropdown-menu ul li i{
+    font-size: 15px;
+} */

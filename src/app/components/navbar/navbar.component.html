@@ -62,12 +62,15 @@
             <div class="dropdown-menu" aria-labelledby="userProfile">
                 <ul>
                     <li class="nav-item">
+                        <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
                         <a routerLink="profile" class="dropdown-item">Profile</a>
                     </li>
                     <li class="nav-item">
+                        <!-- <i class="fa fa-users" aria-hidden="true"></i> -->
                         <a href="#" class="dropdown-item">Teams</a>
                     </li>
                     <li class="nav-item">
+                        <!-- <i class="fa fa-history" aria-hidden="true"></i> -->
                         <a routerLink="tournament-history" class="dropdown-item">Tournament history</a>
                     </li>
                     <li *ngIf="isLoggedIn()" (click)="signout()" class="nav-item">
