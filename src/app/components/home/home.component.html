@@ -65,17 +65,22 @@
               </div>
             </div>
             <div class="overlay-box">
-              <div class="overlay-content">
+              <div class="overlay-content event-cards">
                 <div class="date">
                   
                   <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
                   <span>Start: {{Event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{Event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
                 </div>
-                <div class="organiser">
+                <div class="tournament_date event-cards">
+                  
+                  <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
+                  <span>Start: {{Event.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
+                </div>
+                <div class="organiser event-cards">
                   
                   <h3><i class="fas fa-user-tie"></i> organiser : <span>{{Event.orgainiserId.name}}</span></h3>
                 </div>
-                <div class="location">
+                <div class="location event-cards">
                   
                   <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{Event.tournamentAddress}}</span></h3>
                 </div>

@@ -378,6 +378,10 @@
 .notification-view .notification-content .notification-msg .notification-btn{
     margin-top: 10px;
 }
+.notification-view .notification-content .notification-msg .notification-btn #accept{
+    background: var(--blue-radial-gradient);
+    color: #fff;
+}
 .notification-view .notification-content .notification-msg .notification-btn a{
     font-size: 13px;
     font-weight: 500;

@@ -1,55 +1,58 @@
 <div class="container">
-    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} signin-box">
-        <div class="col-md-5 left">
-            <img src="../../../assets/images/virat-img-non-blur.png" alt="poster" class="img-fluid" />
-        </div>
-        <div class="col-md-7 right">
-            <div class="input-box">
-                <div class="title">
-                    <h3>Sign In</h3>
-                </div>
-
-                <div class="google-sign-in" (click)="signinWithGoogle()">
-                    <a class="google-btn"><i class="fa fa-google" aria-hidden="true"></i> Sign In With
-                        Google</a>
-                </div>
-                <span class="or">
-                  <span id="left-line"></span>
-                    <p>OR</p>
-                  <span id="right-line"></span>
-                </span>
-                <div class="input-area">
-                    <div class="form-group">
-                        <i class="fa-solid fa-envelope"></i>
-                        <input type="email" pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' required #email="ngModel" [(ngModel)]="user.email" name="email" id="email"
-                            class="form-control" placeholder="Email" aria-describedby="helpId" />
-                        <small  id="helpId" *ngIf="email.errors?.['required'] && (email.touched||email.dirty)" >Please
-                            enter email</small>
-                            <small id="helpId" *ngIf="email.errors?.['pattern']&&(email.touched||email.dirty)" >Please Enter Valid Email</small>
-                    </div>
-                    <div class="form-group pass">
-                        <i class="fa-solid fa-unlock-keyhole"></i>
-                        <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password"
-                            id="password" class="form-control" placeholder="Password" aria-describedby="helpId" />
-                        <small  id="helpId" *ngIf="pass.errors?.['required'] && pass.touched">Please
-                            enter password</small>
-                    </div>
-                    <div class="forgot">
-                        <a (click)="forget()">Forget password ?</a>
-                    </div>
-                    <div class="sign-in-btn">
-                        <button [disabled]="email.errors||pass.errors" (click)="SignIn()" class="sign-in">Sign In</button>
-                    </div>
-                </div>
-                <div class="new-user">
-                    <p>New account ? <a (click)="sign_up_page()">Sign Up</a></p>
-                </div>
-            </div>
-        </div>
+  <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} signin-box">
+    <div class="col-md-5 left">
+      <img src="../../../assets/images/virat-img-non-blur.png" alt="poster" class="img-fluid" />
     </div>
+    <div class="col-md-7 right">
+      <div class="input-box">
+        <div class="title">
+          <h3>Sign In</h3>
+        </div>
+
+        <div class="google-sign-in" (click)="signinWithGoogle()">
+          <a class="google-btn"><i class="fa fa-google" aria-hidden="true"></i> Sign In With
+            Google</a>
+        </div>
+        <span class="or">
+          <span id="left-line"></span>
+          <p>OR</p>
+          <span id="right-line"></span>
+        </span>
+        <div class="input-area">
+          <div class="form-group">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" [(ngModel)]="user.email"
+              name="email" id="email" class="form-control" aria-describedby="helpId"  placeholder=" " required />
+            <!-- <input type="email" required [(ngModel)]="user.email" pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #Email="ngModel" class="form-control" id="email" name="email" aria-describedby="helpId" autocomplete="off" placeholder=" " > -->
+            <label class="label-name">Email</label>
+
+            <small id="helpId" *ngIf="email.errors?.['required'] && (email.touched||email.dirty)">Please enter email</small>
+            <small id="helpId" *ngIf="email.errors?.['pattern']&&(email.touched||email.dirty)">Please Enter Valid Email</small>
+          </div>
+          <div class="form-group pass">
+            <i class="fa-solid fa-unlock-keyhole"></i>
+            <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password"
+              class="form-control" placeholder=" " aria-describedby="helpId" />
+            <!-- <input type="password" [(ngModel)]="user.password" pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #pass="ngModel" class="form-control" id="password" name="password" autocomplete="off" required >-->
+            <label class="label-name" for="name"> Password </label>
+            <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched">Please enter password</small>
+          </div>
+          <div class="forgot">
+            <a (click)="forget()">Forget password ?</a>
+          </div>
+          <div class="sign-in-btn">
+            <button [disabled]="email.errors || pass.errors" (click)="SignIn()" class="sign-in">
+              Sign In
+            </button>
+          </div>
+        </div>
+        <div class="new-user">
+          <p>New account ? <a (click)="sign_up_page()">Sign Up</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
 
 <!-- <div class="modal fade" tabindex="-1" id="forget">
     <div class="modal-dialog">
@@ -69,25 +72,24 @@
     </div>
   </div> -->
 
-
-  <!-- Button trigger modal -->
+<!-- Button trigger modal -->
 <!--   -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">...</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
+</div>

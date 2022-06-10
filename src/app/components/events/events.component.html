@@ -4,20 +4,24 @@
         <span class="border"></span>
     </div>
 
-    <!-- <div class="row evets">
-        
-        <div class="title">
-            <h2>Live Events</h2>
-            <span class="border-bottom"></span>
-        </div>
-        <div class="col-sm-6 col-md-6 col-lg-3 event-card" *ngFor="let LiveEvent of Live_event.slice(0,8)">
+    
+
+
+    <!-- live Events -->
+    <div class="title" *ngIf="upcomming_event.length > 0">
+      <h2>Live Events</h2>
+      <span class="border-bottom"></span>
+    </div>
+    <div class="row events">
+
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let live of Live_event">
             <div class="card card-content" >
                 <div class="card-img">
-                  <img src="{{LiveEvent.banner}}" class="card-img-top" alt="...">
+                  <img src="{{live.banner}}" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body">
                   <div class="primary-text">
-                    <h3>Event : <span>{{LiveEvent.tournamentName}}</span></h3>
+                    <h3>Event : <span>{{live.tournamentName}}</span></h3>
                     <span class="read_more">
                       read more
                     </span>
@@ -28,30 +32,52 @@
                     <div class="date">
                       
                       <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
-                      <span>Start: {{LiveEvent.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{LiveEvent.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+                      <span>Start: {{live.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{live.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
                     </div>
                     <div class="organiser">
                       
-                      <h3><i class="fas fa-user-tie"></i> organiser : <span>{{LiveEvent.orgainiserId.name}}</span></h3>
+                      <h3><i class="fas fa-user-tie"></i> organiser : <span>{{live.orgainiserId.name}}</span></h3>
                     </div>
                     <div class="location">
                       
-                      <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{LiveEvent.tournamentAddress}}</span></h3>
+                      <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{live.tournamentAddress}}</span></h3>
                     </div>
                   </div>
                   <div class="overlay-btn">
-                    <a class="read-more-btn"  (click)="read(LiveEvent._id)">Read More</a>
-                    <a class="register-btn" (click)="register(LiveEvent._id)">Register</a>
+                    <a class="read-more-btn"  (click)="read(live._id)">Read More</a>
+                    <a class="register-btn" (click)="register(live)">Register</a>
                   </div>
                 </div>
               </div>
         </div>
-        
-    </div> -->
+        <!-- <div class="d-flex justify-content-center pagination">
+          <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onCardDataChange($event)">
+          </pagination-controls>
+        </div> -->
+    </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
     <!-- Upcomming Events -->
-    <div class="title">
+    <div class="title" *ngIf="upcomming_event.length > 0">
       <h2>Upcomming Events</h2>
       <span class="border-bottom"></span>
     </div>
@@ -102,7 +128,7 @@
 
 
     <!-- End Events -->
-    <div class="title">
+    <div class="title" *ngIf="end_event.length > 0">
         <h2>End Events</h2>
         <span class="border-bottom"></span>
     </div>

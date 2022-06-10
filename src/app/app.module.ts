@@ -25,12 +25,12 @@ import{Ng2SearchPipeModule} from 'ng2-search-filter'
 
 
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
-import { HomComponent } from './components/hom/hom.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { TournamentHistoryComponent } from './components/tournament-history/tournament-history.component';
 import { ForgetPageComponent } from './components/forget-page/forget-page.component';
 import { NewPasswordComponent } from './components/new-password/new-password.component';
+import { TeamHistoryComponent } from './components/team-history/team-history.component';
 
 const socialProvider={
   provide:"SocialAuthServiceConfig",
@@ -57,13 +57,13 @@ const socialProvider={
     AboutComponent,
     ContactComponent,
     RegistrationFormComponent,
-    HomComponent,
     UserProfileComponent,
 
     UpdateProfileComponent,
       TournamentHistoryComponent,
       ForgetPageComponent,
-      NewPasswordComponent
+      NewPasswordComponent,
+      TeamHistoryComponent
   ],
   imports: [
     BrowserModule,

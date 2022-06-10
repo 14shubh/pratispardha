@@ -73,10 +73,15 @@
     background: var(--blue-radial-gradient);
     text-decoration: none;
     font-size: 18px;
-    padding : 5px 25px;
+    padding: 5px 25px;
+    border-radius:3px;
     color: #fff;
     letter-spacing: 1px;
     cursor: pointer;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -ms-border-radius:3px;
+    -o-border-radius:3px;
 }
 
 .other-info .info-heading{

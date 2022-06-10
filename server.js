@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(__dirname + '/dist/pratispardha_frontend'));
 
 app.get('/*', function(req, res) {
-
+    //sessionStorage.removeItem('jwt_token');
     res.sendFile(path.join(__dirname + '/dist/pratispardha_frontend/index.html'));
 });
 

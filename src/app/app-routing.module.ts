@@ -11,13 +11,13 @@ import { ViewProfileComponent } from './components/view-profile/view-profile.com
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
-import { HomComponent } from './components/hom/hom.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { AuthGuard } from './auth.guard';
 import { TournamentHistoryComponent } from './components/tournament-history/tournament-history.component';
 import { ForgetPageComponent } from './components/forget-page/forget-page.component';
 import { NewPasswordComponent } from './components/new-password/new-password.component';
+import { TeamHistoryComponent } from './components/team-history/team-history.component';
 
 
 const routes: Routes = [
@@ -76,6 +76,12 @@ const routes: Routes = [
   {
     path:"tournament-history",
     component:TournamentHistoryComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:'team',
+    component: TeamHistoryComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: "forget-password",

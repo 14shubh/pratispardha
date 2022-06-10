@@ -8,8 +8,8 @@
     margin-left: 320px;
 }
 .registration-form .form-box .form-group {
-    margin: 20px auto;
-    width:550px;
+    margin: 30px auto;
+    max-width:550px;
     position: relative;
 }
 /* .registration-form .form-btn a{
@@ -29,6 +29,8 @@ input {
     border-radius: 3px;
     background: #fff;
     resize: none;
+    color:rgb(87, 87, 87);
+    font-weight: 500;
     outline: none;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -68,7 +70,7 @@ input {
     content: attr(placeholder);
     display: inline-block;
     padding: 0 2px;
-    color: #898989;
+    color: #717171;
     white-space: nowrap;
     transition: 0.3s ease-in-out;
     background-image: linear-gradient(to bottom, #fff, #fff);
@@ -86,13 +88,38 @@ input {
 
 
 .registration-form .form-btn button{
-    background: var(--blue-radial-gradient);
+    /*background: var(--blue-radial-gradient);
+    */background: none;
     margin-right: 50px;
-    padding: 8px 20px;
+    padding: 5px 20px;
     text-decoration: none;
     color: #fff;
     cursor: pointer;
     border: none;
+    font-weight: 500;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.registration-form .form-btn .cancel-btn{
+  background-color: none;
+  border: 1px solid #333;
+  color: #333;
+  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+}
+.registration-form .form-btn .cancel-btn:hover{
+  background: var(--blue-radial-gradient);
+  color: #fff;
+}
+.registration-form .form-btn .register-btn{
+  border: 1px solid #333;
+  background: var(--blue-radial-gradient);
 }
 
 .registration-form .form-btn{

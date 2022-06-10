@@ -1,0 +1,16 @@
+#team{
+    padding: 55px 0;
+}
+#team .team-name{
+    margin-top:80px;
+    text-align: center;
+}
+.table thead tr{
+    background: var(--blue-radial-gradient);
+    color: #fff;
+    letter-spacing: 1px;
+}
+.table tbody tr{
+    font-size: 16px;
+    font-weight: 500;
+}

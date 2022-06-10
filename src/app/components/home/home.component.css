@@ -92,7 +92,7 @@
     color: rgb(39, 102, 151);
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap
+    white-space: nowrap;
 }
 .event-card .card-content .primary-text span{
     font-size: 15px;
@@ -137,30 +137,30 @@
 
 .event-card .card-content .overlay-box .overlay-content h3{
     margin-bottom:10px;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: capitalize;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
-.event-card .card-content .overlay-box .overlay-content .date span{
+.event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .tournament_date span{
     overflow: hidden;
     margin-left: 35px;
 }
 
-.event-card .card-content .overlay-box .overlay-content .date h3 i,.event-card .card-content .overlay-box .overlay-content .organiser h3 i,.event-card .card-content .overlay-box .overlay-content .location h3 i{
+.event-card .card-content .overlay-box .overlay-content .date h3 i,.event-card .card-content .overlay-box .overlay-content .tournament_date h3 i, .event-card .card-content .overlay-box .overlay-content .organiser h3 i,.event-card .card-content .overlay-box .overlay-content .location h3 i{
     font-size: 17px;
     margin-right: 12px;
 }
-.event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
+.event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .tournament_date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
     font-weight: 400;
     font-size: 13px;
 }
-.event-card .card-content .overlay-box .overlay-content .organiser{
-    margin: 40px 0;
+.event-card .card-content .overlay-box .overlay-content .event-cards{
+    margin: 25px 0;
 }
 .event-card .card-content .overlay-box .overlay-btn{
-    margin-top: 50px;
+    margin-top: 20px;
     padding: 0;
     display: flex;
     justify-content: space-evenly;
@@ -169,12 +169,17 @@
     border: 1px solid #fff;
     text-decoration: none;
     color: #fff;
+    border-radius:3px;
     letter-spacing: 1px;
     font-size: 14px;
     padding: 5px 14px;
     position: relative;
     z-index: 2;
     cursor: pointer;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    -ms-border-radius:3px;
+    -o-border-radius:3px;
 }
 .event-card .card-content .overlay-box .overlay-btn a::before {
     content: " ";
@@ -322,7 +327,7 @@
     .event-card .card-content .overlay-box .overlay-content h3{
         font-size: 15px;
     }
-    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
+    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .tournament_date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
         
         font-size: 11px;
     }
@@ -371,7 +376,7 @@
     .event-card .card-content .overlay-box .overlay-content h3{
         font-size: 18px;
     }
-    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
+    .event-card .card-content .overlay-box .overlay-content .date span,  .event-card .card-content .overlay-box .overlay-content .tournament_date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
         font-size: 13px;
     }
     .event-card .card-content .overlay-box .overlay-btn{
@@ -429,11 +434,11 @@
     .event-card .card-content .overlay-box .overlay-content h3{
         font-size: 20px;
     }
-    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
+    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .tournament_date span,  .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
         font-size: 14px;
     }
-    .event-card .card-content .overlay-box .overlay-content .organiser{
-        margin: 40px 0;
+    .event-card .card-content .overlay-box .overlay-content .event-cards{
+        margin: 25px 0;
     }
     
     .event-card .card-content .overlay-box .overlay-btn{
@@ -483,7 +488,7 @@
     .event-card .card-content .overlay-box .overlay-content h3{
         font-size: 16px;
     }
-    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
+    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .tournament_date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
         font-size: 11px;
     }
    
@@ -593,11 +598,11 @@
     .event-card .card-content .overlay-box .overlay-content h3{
         font-size: 16px;
     }
-    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
+    .event-card .card-content .overlay-box .overlay-content .date span, .event-card .card-content .overlay-box .overlay-content .tournament_date span, .event-card .card-content .overlay-box .overlay-content .organiser  span, .event-card .card-content .overlay-box .overlay-content .location span{
         font-size: 12px;
     }
-    .event-card .card-content .overlay-box .overlay-content .organiser{
-        margin: 50px 0;
+    .event-card .card-content .overlay-box .overlay-content .event-cards{
+        margin: 25px 0;
     }
     
     .event-card .card-content .overlay-box .overlay-btn{

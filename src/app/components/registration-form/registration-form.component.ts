@@ -15,7 +15,6 @@ export class RegistrationFormComponent implements OnInit {
   name: string = ''; email: string = ''; mobile: string = ''; canApply: boolean = false;
   constructor(private ngZone: NgZone,
     public spin: NgxSpinnerService,
-
     private toast: ToastrService, private activateRouter: ActivatedRoute, private userAuth: UserAuthService, private router: Router) {
   }
   public async ragisterForTournament() {
@@ -41,16 +40,24 @@ export class RegistrationFormComponent implements OnInit {
                       this.flag = true;
                       this.userAuth.applyForTournament(this.teamId, this.eventId).subscribe(data => {
                         if (data) {
-                          this.toast.success("Success");
-                          window.location.href = "https://pratispardha.herokuapp.com/home";
+                          this.ngZone.run(()=>{
+                            this.toast.success("Success");
+                            window.location.href = "https://pratispardha.herokuapp.com/home";                            
+                          })
+                          
                         }
                       });
                     })
                   } else {
-                    this.toast.success("Success");
-                    window.location.href = "https://pratispardha.herokuapp.com/home"; this.userAuth.applyForTournament(this.teamId, this.eventId).subscribe(data => {
+                    this.ngZone.run(()=>{
                       this.toast.success("Success");
+                    window.location.href = "https://pratispardha.herokuapp.com/home";
+                    })
+                     this.userAuth.applyForTournament(this.teamId, this.eventId).subscribe(data => {
+                      this.ngZone.run(()=>{
+                        this.toast.success("Success");
                       window.location.href = "https://pratispardha.herokuapp.com/home";
+                      })
                     })
                   }
 

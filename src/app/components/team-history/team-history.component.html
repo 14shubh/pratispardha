@@ -1,0 +1,28 @@
+<div class="container" id="team">
+    <div class="team-name">
+        <h2>Team : Palasiya Team</h2>
+    </div>
+
+    <div  class="table-responsive">
+        <table class="table mt-5">
+          <thead class="table">
+            <tr class="text-center">
+              <th scope="col">S.No</th>
+              <th scope="col">Tournament Name</th>
+              <th scope="col">Tournament Date</th>
+              <th scope="col">view Players</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr class="text-center" *ngFor="let i of [1,1,1,1] index as p">
+                <th scope="row">{{p+1}}</th>
+                <td>Khelo dhumdamse</td>
+                <td>5/06/2022</td>
+                <td>team Players</td>
+            </tr>
+            
+          </tbody>
+        </table>
+    </div>
+</div>

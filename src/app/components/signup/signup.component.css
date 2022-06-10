@@ -12,8 +12,7 @@
 }
 .left{
     padding: 0;
-    /* height: 100%;
-    width: 100%; */
+    
 }
 .left img{
     height: 100%;
@@ -40,24 +39,63 @@
 }
 .right .input-box .input-area .form-group i{
     position: absolute;
-    left: 10px;
-    top: 10px;
+    left: 20px;
+    top: 15px;
     color: rgb(97, 97, 97);
 }
+
 .right .input-box .input-area .form-group input, .right .input-box .input-area .form-group select{
-    padding:5px 10px 5px 60px;
-    border: 0;
-    border-bottom: 1px solid rgb(215, 215, 215);
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
+    padding:10px 10px 10px 60px;
+    /*border: 0;
+    border-bottom: 2px solid rgba(207, 207, 207, 0.719);
+    */border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
     font-weight: 600;
     letter-spacing: 1px;
+    color:#333;
 }
+
 .right .input-box .input-area .form-group select{
     cursor: pointer;
+}
+
+.right .input-box .input-area .form-group input:-webkit-autofill,
+.right .input-box .input-area .form-group input:-webkit-autofill:hover, 
+.right .input-box .input-area .form-group input:-webkit-autofill:focus, 
+.right .input-box .input-area .form-group input:-webkit-autofill:active{
+  -webkit-box-shadow: 0 0 0px 1px rgb(255, 255, 255) ;
+  transition: background-color 5000s ease-in-out 0s;
+    
+}
+
+.label-name{
+    position: absolute;
+    top:10px;
+    left: 60px;
+    pointer-events: none;
+    padding:0 2px;
+    transition: transform 0.5s ease;
+    -webkit-transition: transform 0.5s ease;
+    -moz-transition: transform 0.5s ease;
+    -ms-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+}
+
+.right .input-box .input-area .form-group input:not(:placeholder-shown) + .label-name, 
+.right .input-box .input-area .form-group input:focus + .label-name
+{
+    
+    background: #fff;
+    transform: translate(-20px, -20px);
+    -webkit-transform: translate(-20px, -20px);
+    -moz-transform: translate(-20px, -20px);
+    -ms-transform: translate(-20px, -20px);
+    -o-transform: translate(-20px, -20px);
+    color: #4285f4;
+    font-size: 14px;
 }
 
 .right .input-box .input-area .form-group input[type=text].form-control:focus, 
@@ -77,8 +115,8 @@
 .sign-up-btn .sign-up{
     text-decoration: none;
     font-weight: 600;
-    font-size: 24px;
-    padding: 5px 40px;
+    font-size: 18px;
+    padding: 5px 30px;
     color: #333;
     border: 1px solid rgb(99, 99, 99);
     border-radius: 4px;
@@ -96,7 +134,7 @@
 .sign-up-btn .sign-up:hover{
     color: #fff;
     background: var(--blue-radial-gradient);
-    border: 0;
+    /* border: 0; */
 }
 .old-user p{
     font-size: 14px;
@@ -131,11 +169,11 @@
     .signup-box .left img{
         display: none;
     }
-    .right .input-box .input-area .form-group input{
+    /* .right .input-box .input-area .form-group input{
         font-size: 14px;
-    }
+    } */
     .right .input-box .input-area .form-group input, .right .input-box .input-area .form-group select{
-        font-size:14px;
+        font-size:12px;
     }
     .right .input-box .input-area .form-group i{
         font-size: 14px;
