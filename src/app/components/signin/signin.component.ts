@@ -14,7 +14,9 @@ import { ToastrService } from 'ngx-toastr';
 export class SigninComponent implements OnInit {
  
   constructor(private _userAuth: UserAuthService, private Toast:ToastrService,private _router: Router,private socialService:SocialAuthService) { }
- 
+  
+  showPassword:boolean = false;
+
   public sign_up_page(){
     this._router.navigate(['/sign-up']);
   }
@@ -57,6 +59,11 @@ export class SigninComponent implements OnInit {
             this.Toast.warning("Internal Server Error")
       }
     })
+  }
+
+  public ShowPassword(){
+    this.showPassword = !this.showPassword;
+    
   }
   public signinWithGoogle(){
     this.socialService.signIn(GoogleLoginProvider.PROVIDER_ID)

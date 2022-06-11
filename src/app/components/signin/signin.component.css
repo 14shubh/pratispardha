@@ -104,14 +104,24 @@
     margin-top: 50px;
 }
 .right .input-box .input-area .form-group{
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     position: relative;
 }
-.right .input-box .input-area .form-group i{
+.right .input-box .input-area .form-group .fa-envelope,
+.right .input-box .input-area .form-group .fa-unlock-keyhole{
     position: absolute;
     left: 10px;
     top: 15px;
     color: rgb(97, 97, 97);
+}
+.right .input-box .input-area .form-group .fa-eye{
+    font-weight: 600;
+}
+.right .input-box .input-area .form-group .fa-eye,
+.right .input-box .input-area .form-group .fa-eye-slash{
+    position: absolute;
+    right: 10px;
+    top:15px;
 }
 .right .input-box .input-area .form-group input{
     padding:10px 10px 10px 60px;
@@ -124,6 +134,17 @@
     -o-border-radius: 3px;
     font-weight: 600;
     letter-spacing: 1px;
+}
+.right .input-box .input-area .form-group #helpId{
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    color: rgb(215, 0, 0);
+
+}
+.right .input-box .input-area .form-group #helpId .fa-circle-exclamation{
+   font-size: 14px;
+   margin-right: 10px;
 }
 
 .right .input-box .input-area .form-group input:-webkit-autofill,

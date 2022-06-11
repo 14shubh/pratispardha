@@ -34,13 +34,13 @@
           </div>
           <div class="form-group">
               
-              <input (keyup)="checkTeam()" [(ngModel)]="teamName" #team_name="ngModel"[value]="eventData.tournamentFees" required='' type="text" id="team_name"  [disabled]="flag" minlength="10" disabled>
+              <input (keyup)="checkTeam()" [(ngModel)]="teamName" #team_name="ngModel"[value]="eventData.tournamentFees" required='' type="text" id="team_name"  minlength="10" [disabled]="flag">
               <label alt='Team Name' placeholder='Team Name...' ></label>
 
               <small *ngIf=" (!(teamName==''))&&!(canApply)&&team_name.dirty" style="color:red" >Team name is Already exist </small>
               <small  *ngIf="(!(team_name.errors?.['required'])&&!(team_name.errors?.['minlength']))&&(canApply)&&team_name.dirty" style="color:green" >Team name is Avilable </small>
               <small *ngIf="(teamName=='')&&team_name.touched" style="color:red" >Team name is Required </small>
-              <small *ngIf="team_name.errors?.['minlength']" style="color:red" >Teaa Name Must be 10 Character long </small>
+              <small *ngIf="team_name.errors?.['minlength']" style="color:red" >Team Name Must be 10 Character long </small>
             
             </div>
             <div class="form-group">

@@ -12,8 +12,17 @@ import { User} from '../../model/user'
 })
 export class SignupComponent implements OnInit {
   user:User = new User('','','','','','','','','','','','','','','');
-
-  constructor(private _userAuth: UserAuthService,private toast:ToastrService, private _router: Router) { }
+  emails: string[] = [];
+  showPassword:boolean= false;
+  status:boolean=false;
+  constructor(private _userAuth: UserAuthService,private toast:ToastrService, private _router: Router) { 
+    this._userAuth.playerList().subscribe(data=>{
+      for(let item of data){
+        this.emails.push(item.email)
+      }
+  console.log(this.emails)
+    })
+  }
 
   public playerType(event:any){
      this.user.playerType = event.target.value;
@@ -22,6 +31,23 @@ export class SignupComponent implements OnInit {
   public sign_in_page(){
     this._router.navigate(['sign-in']);
   }
+  public ShowPassword(){
+    this.showPassword = !this.showPassword;
+  }
+public emailCheck(){
+  console.log(this.user.email)
+  if(this.emails.indexOf(this.user.email)<0)
+        this.status=true;
+        else
+        this.status=false;
+  
+    console.log(this.emails.indexOf(this.user.email))
+  
+  
+
+
+}
+
   public SignUp(){
     if(this.user.playerType=="0")
     //  alert("Please Select the type")
@@ -45,6 +71,8 @@ export class SignupComponent implements OnInit {
   }
   
   ngOnInit(): void {
+
+   
   }
 
 }

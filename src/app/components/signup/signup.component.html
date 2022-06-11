@@ -13,41 +13,69 @@
                         <i class="fa-solid fa-user"></i>
                         <!-- <input type="text" required pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" #name="ngModel" [(ngModel)]="user.name" name="name" id="name" class="form-control" placeholder="Name"
                             aria-describedby="helpId"> -->
-                            <input type="text" pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" #name="ngModel" [(ngModel)]="user.name" name="name" id="name" spellcheck="false" class="form-control" aria-describedby="helpId"  placeholder=" " required />
-                            <label for="name" class="label-name">Name</label>
-                        <small id="helpId" *ngIf="name.errors?.['required'] && (name.touched||name.dirty)" >Please enter name</small>
-                        <small id="helpId" *ngIf="name.errors?.['pattern']"> Please Enter Valid Name</small>
+                        <input type="text" pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$"
+                            #name="ngModel" [(ngModel)]="user.name" name="name" id="name" spellcheck="false"
+                            class="form-control" aria-describedby="helpId" placeholder=" " required />
+                        <label for="name" class="label-name">Name</label>
+
+                        <small id="helpId" *ngIf="name.errors?.['required'] && (name.touched||name.dirty)"><i
+                                class="fa-solid fa-circle-exclamation"></i> Please enter name</small>
+                        <small id="helpId" *ngIf="name.errors?.['pattern']"><i
+                                class="fa-solid fa-circle-exclamation"></i> Please Enter Valid Name</small>
                     </div>
                     <div class="form-group">
                         <i class="fa-solid fa-envelope"></i>
                         <!-- <input type="email" required pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #email="ngModel" [(ngModel)]="user.email" name="email" id="email" class="form-control" placeholder="Email"
                             aria-describedby="helpId"> -->
-                            <input type="email" pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #email="ngModel" [(ngModel)]="user.email" name="email" id="email" spellcheck="false" class="form-control" aria-describedby="helpId"  placeholder=" " required />
-                            <label for="name" class="label-name">Email</label>
-                            <small id="helpId" *ngIf="email.errors?.['required'] && (email.touched||email.dirty)" >Please enter email</small>
-                            <small id="helpId" *ngIf="email.errors?.['pattern']">Please Enter Valid Email</small>
-                        </div>
+                        <input (keyup)="emailCheck()" type="email" pattern='[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,3}'
+                            #email="ngModel" [(ngModel)]="user.email" name="email" id="email" spellcheck="false"
+                            class="form-control" aria-describedby="helpId" placeholder=" " required />
+                        <label for="name" class="label-name">Email</label>
+
+
+
+                        <small id="helpId" *ngIf="email.errors?.['required'] && (email.touched||email.dirty)"><i
+                                class="fa-solid fa-circle-exclamation"></i>Please enter email</small>
+                        <small id="helpId" *ngIf="email.errors?.['pattern']"><i
+                                class="fa-solid fa-circle-exclamation"></i>Please Enter Valid Email</small>
+                        <small *ngIf="!(this.status)&&!(email.errors)&&(email.touched||email.dirty)" id="helpId">Email
+                            is already ragistered</small>
+                        <small style="color: green;" *ngIf="this.status&&!(email.errors)&&(email.touched||email.dirty)"
+                            id="helpId">Email is avialable</small>
+                    </div>
                     <div class="form-group">
-                        <i class="fa-solid fa-unlock-keyhole"></i>
+                        <i class="fa-solid fa-unlock-keyhole" (click)="ShowPassword()"></i>
+                        <i class="fa fa-eye" aria-hidden="true" (click)="ShowPassword()"></i>
+                        <i class="fa-solid fa-eye-slash" aria-hidden="true" *ngIf="showPassword"
+                            (click)="ShowPassword()"></i>
                         <!-- <input type="password" minlength="8" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" class="form-control" placeholder="Password"
                             aria-describedby="helpId"> -->
-                            <input type="password"  minlength="8" #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" class="form-control" aria-describedby="helpId"  placeholder=" " required />
-                            <label for="name" class="label-name">Password</label>
-                        <small id="helpId" *ngIf="pass.errors?.['required'] && (pass.touched||pass.dirty)" >Please enter password</small>
-                        <small id="helpId" *ngIf="pass.errors?.['minlength']&&(pass.touched||pass.dirty)">Password atleast 8 character long</small>
+                        <input [type]="showPassword ? 'text' : 'password'" minlength="8" #pass="ngModel"
+                            [(ngModel)]="user.password" name="password" id="password" spellcheck="false" required class="form-control"
+                            aria-describedby="helpId" placeholder=" " required />
+                        <label for="name" class="label-name">Password</label>
+                        <small id="helpId" *ngIf="pass.errors?.['required'] && (pass.touched||pass.dirty)"><i
+                                class="fa-solid fa-circle-exclamation"></i>Please enter password</small>
+                        <small id="helpId" *ngIf="pass.errors?.['minlength']&&(pass.touched||pass.dirty)"><i
+                                class="fa-solid fa-circle-exclamation"></i>Password atleast 8 character long</small>
                     </div>
                     <div class="form-group">
                         <i class="fa-solid fa-mobile"></i>
                         <!-- <input type="phone" pattern="^[0-9]{10}$"  required #mobile="ngModel" [(ngModel)]="user.mobile" name="mobile" id="mobile" class="form-control" placeholder="Mobile"
                             aria-describedby="helpId"> -->
-                            <input type="phone" pattern="^[0-9]{10}$" #mobile="ngModel" [(ngModel)]="user.mobile" name="mobile" id="mobile" class="form-control" aria-describedby="helpId"  placeholder=" " required />
-                            <label for="name" class="label-name">Mobile</label>
-                        <small  id="helpId" *ngIf="mobile.errors?.['required'] && mobile.touched" >Please enter mobile</small>
-                    <small *ngIf="mobile.errors?.['pattern']&&(mobile.touched||mobile.dirty)" id="helpId">Please Enter Valid Mobile Number</small>
+                        <input type="phone" pattern="^[0-9]{10}$" #mobile="ngModel" [(ngModel)]="user.mobile"
+                            name="mobile" id="mobile" class="form-control" aria-describedby="helpId" placeholder=" "
+                            required />
+                        <label for="name" class="label-name">Mobile</label>
+                        <small id="helpId" *ngIf="mobile.errors?.['required'] && mobile.touched"><i
+                                class="fa-solid fa-circle-exclamation"></i>Please enter mobile</small>
+                        <small *ngIf="mobile.errors?.['pattern']&&(mobile.touched||mobile.dirty)" id="helpId"><i
+                                class="fa-solid fa-circle-exclamation"></i>Please Enter Valid Mobile Number</small>
                     </div>
                     <div class="form-group">
                         <i class="fa-solid fa-user-plus"></i>
-                        <select (change)="playerType($event)" required name="player_type" id="player-type" class="form-select">
+                        <select (change)="playerType($event)" required name="player_type" id="player-type"
+                            class="form-select">
                             <option name="select" value="0">Select an option</option>
                             <option value="Batsman">Batsman</option>
                             <option value="Bowler">Bowler</option>
@@ -57,7 +85,8 @@
                         <!-- <small id="helpId" class="text-muted">Help text</small> -->
                     </div>
                     <div class="sign-up-btn">
-                        <button [disabled]="name.errors||email.errors||mobile.errors||pass.errors"(click)="SignUp()" class=" sign-up">Sign Up</button>
+                        <button [disabled]="name.errors||email.errors||mobile.errors||pass.errors" (click)="SignUp()"
+                            class=" sign-up">Sign Up</button>
                     </div>
                 </div>
                 <div class="old-user">

@@ -9,19 +9,25 @@
     -o-border-radius:3px ;
 }
 
+.left .left-image{
+    padding:15px 65px 0 65px;
+}
 .left .player-image{
-    margin: auto;
-    width: fit-content;
+    height:250px;
+    /* margin: auto; */
+    width: 100%;
     background: var( --blue-radial-gradient);
     padding:15px 30px 0 30px;
     
 }
-.left .left-image{
-    padding:15px 65px 0 65px;
+.left .player-image .card-image{
+    height: 100%;
+    width: 100%;
 }
 .left .player-image .card-image img{
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 .left .left-image .type{
     background: #003D76;

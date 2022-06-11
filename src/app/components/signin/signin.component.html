@@ -23,19 +23,22 @@
             <i class="fa-solid fa-envelope"></i>
             <input type="email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" [(ngModel)]="user.email"
               name="email" id="email" class="form-control" aria-describedby="helpId"  placeholder=" " required />
-            <!-- <input type="email" required [(ngModel)]="user.email" pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #Email="ngModel" class="form-control" id="email" name="email" aria-describedby="helpId" autocomplete="off" placeholder=" " > -->
+            
             <label class="label-name">Email</label>
 
-            <small id="helpId" *ngIf="email.errors?.['required'] && (email.touched||email.dirty)">Please enter email</small>
-            <small id="helpId" *ngIf="email.errors?.['pattern']&&(email.touched||email.dirty)">Please Enter Valid Email</small>
+            <small id="helpId" *ngIf="email.errors?.['required'] && (email.touched||email.dirty)"><i class="fa-solid fa-circle-exclamation"></i>Please enter email</small>
+            <small id="helpId" *ngIf="email.errors?.['pattern']&&(email.touched||email.dirty)"><i class="fa-solid fa-circle-exclamation"></i>Please Enter Valid Email</small>
           </div>
           <div class="form-group pass">
             <i class="fa-solid fa-unlock-keyhole"></i>
-            <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password"
+            <i class="fa fa-eye" aria-hidden="true" (click)="ShowPassword()"></i>
+            <i class="fa-solid fa-eye-slash" aria-hidden="true" *ngIf="showPassword" (click)="ShowPassword()"></i>
+            
+            <input [type]="showPassword ? 'text' : 'password'" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" spellcheck="false"
               class="form-control" placeholder=" " aria-describedby="helpId" />
-            <!-- <input type="password" [(ngModel)]="user.password" pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #pass="ngModel" class="form-control" id="password" name="password" autocomplete="off" required >-->
+            
             <label class="label-name" for="name"> Password </label>
-            <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched">Please enter password</small>
+            <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched"><i class="fa-solid fa-circle-exclamation"></i>Please enter password</small>
           </div>
           <div class="forgot">
             <a (click)="forget()">Forget password ?</a>
@@ -54,42 +57,3 @@
   </div>
 </div>
 
-<!-- <div class="modal fade" tabindex="-1" id="forget">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-<!-- Button trigger modal -->
-<!--   -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">...</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Close
-        </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
