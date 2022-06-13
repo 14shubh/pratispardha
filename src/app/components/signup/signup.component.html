@@ -11,8 +11,7 @@
                 <div class="input-area">
                     <div class="form-group">
                         <i class="fa-solid fa-user"></i>
-                        <!-- <input type="text" required pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$" #name="ngModel" [(ngModel)]="user.name" name="name" id="name" class="form-control" placeholder="Name"
-                            aria-describedby="helpId"> -->
+                        
                         <input type="text" pattern="^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$"
                             #name="ngModel" [(ngModel)]="user.name" name="name" id="name" spellcheck="false"
                             class="form-control" aria-describedby="helpId" placeholder=" " required />
@@ -25,8 +24,7 @@
                     </div>
                     <div class="form-group">
                         <i class="fa-solid fa-envelope"></i>
-                        <!-- <input type="email" required pattern='[a-z0-9]+@[a-z]+\.[a-z]{2,3}' #email="ngModel" [(ngModel)]="user.email" name="email" id="email" class="form-control" placeholder="Email"
-                            aria-describedby="helpId"> -->
+                        
                         <input (keyup)="emailCheck()" type="email" pattern='[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,3}'
                             #email="ngModel" [(ngModel)]="user.email" name="email" id="email" spellcheck="false"
                             class="form-control" aria-describedby="helpId" placeholder=" " required />
@@ -48,8 +46,7 @@
                         <i class="fa fa-eye" aria-hidden="true" (click)="ShowPassword()"></i>
                         <i class="fa-solid fa-eye-slash" aria-hidden="true" *ngIf="showPassword"
                             (click)="ShowPassword()"></i>
-                        <!-- <input type="password" minlength="8" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" class="form-control" placeholder="Password"
-                            aria-describedby="helpId"> -->
+                        
                         <input [type]="showPassword ? 'text' : 'password'" minlength="8" #pass="ngModel"
                             [(ngModel)]="user.password" name="password" id="password" spellcheck="false" required class="form-control"
                             aria-describedby="helpId" placeholder=" " required />
@@ -61,8 +58,7 @@
                     </div>
                     <div class="form-group">
                         <i class="fa-solid fa-mobile"></i>
-                        <!-- <input type="phone" pattern="^[0-9]{10}$"  required #mobile="ngModel" [(ngModel)]="user.mobile" name="mobile" id="mobile" class="form-control" placeholder="Mobile"
-                            aria-describedby="helpId"> -->
+                        
                         <input type="phone" pattern="^[0-9]{10}$" #mobile="ngModel" [(ngModel)]="user.mobile"
                             name="mobile" id="mobile" class="form-control" aria-describedby="helpId" placeholder=" "
                             required />

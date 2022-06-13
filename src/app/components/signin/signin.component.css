@@ -122,6 +122,7 @@
     position: absolute;
     right: 10px;
     top:15px;
+    cursor: pointer;
 }
 .right .input-box .input-area .form-group input{
     padding:10px 10px 10px 60px;
