@@ -156,7 +156,7 @@
     font-weight: 400;
     font-size: 13px;
 }
-.event-card .card-content .overlay-box .overlay-content .event-cards{
+.event-card .card-content .overlay-box .event-cards{
     margin: 25px 0;
 }
 .event-card .card-content .overlay-box .overlay-btn{
@@ -616,7 +616,7 @@
         -moz-border-radius: 3px;
         -ms-border-radius: 3px;
         -o-border-radius: 3px;
-}
+    }
     .view-all{
         margin:20px auto;
     }

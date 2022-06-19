@@ -25,7 +25,7 @@
                     <div class="form-group">
                         <i class="fa-solid fa-envelope"></i>
                         
-                        <input (keyup)="emailCheck()" type="email" pattern='[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,3}'
+                        <input (keyup)="emailCheck()" type="email" pattern='[a-zA-Z0-9.]+@[a-z]+\.[a-z]{2,3}'
                             #email="ngModel" [(ngModel)]="user.email" name="email" id="email" spellcheck="false"
                             class="form-control" aria-describedby="helpId" placeholder=" " required />
                         <label for="name" class="label-name">Email</label>

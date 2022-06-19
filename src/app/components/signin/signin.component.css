@@ -138,10 +138,9 @@
 }
 .right .input-box .input-area .form-group #helpId{
     position: absolute;
-    top: 50px;
+    top: 60px;
     left: 20px;
     color: rgb(215, 0, 0);
-
 }
 .right .input-box .input-area .form-group #helpId .fa-circle-exclamation{
    font-size: 14px;
@@ -193,7 +192,7 @@
     margin-bottom: 0;
 }
 .right .input-box .input-area .forgot{
-    margin-top: 10px;
+    margin-top: 30px;
     text-align: right;
 }
 .right .input-box .input-area .forgot a{
@@ -334,8 +333,8 @@
         font-size: 12px;
     }
 } 
-#helpId{
-    color: red;
+.right .input-box .input-area .form-group #helpId{
+    top: 40px;
 }
 button:disabled,button[disabled]{
     background-color: #cccccc;
