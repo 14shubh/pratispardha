@@ -142,7 +142,8 @@
     -moz-border-radius:3px;
     -ms-border-radius:3px;
     -o-border-radius:3px;
-}t-card .card-content .overlay-box .overlay-btn a::before {
+}
+.event-card .card-content .overlay-box .overlay-btn a::before {
     content: " ";
     position: absolute;
     top: 0;
