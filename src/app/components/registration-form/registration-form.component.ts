@@ -42,7 +42,8 @@ export class RegistrationFormComponent implements OnInit {
                         if (data) {
                           this.ngZone.run(()=>{
                             this.toast.success("Success");
-                            window.location.href = "https://pratispardha.herokuapp.com/home";                            
+                            // window.location.href = "https://pratispardha.herokuapp.com/home";                            
+                            this.router.navigate(['home']);
                           })
                           
                         }
@@ -51,12 +52,15 @@ export class RegistrationFormComponent implements OnInit {
                   } else {
                     this.ngZone.run(()=>{
                       this.toast.success("Success");
-                    window.location.href = "https://pratispardha.herokuapp.com/home";
+                    // window.location.href = "https://pratispardha.herokuapp.com/home";
+                    this.router.navigate(["home"])
                     })
                      this.userAuth.applyForTournament(this.teamId, this.eventId).subscribe(data => {
                       this.ngZone.run(()=>{
                         this.toast.success("Success");
-                      window.location.href = "https://pratispardha.herokuapp.com/home";
+                      // window.location.href = "https://pratispardha.herokuapp.com/home";
+                        this.router.navigate(["home"])
+
                       })
                     })
                   }

@@ -16,22 +16,22 @@
  
         <div  class="table-responsive">
           <table class="table mt-5">
-            <thead class="table-dark">
+            <thead>
               <tr class="text-center">
                 <th scope="col">S.No</th>
                 <th scope="col">Tournament Name</th>
                 <th scope="col">Tournament Date</th>
-                <th scope="col">Tournament Prize</th>
+                <th scope="col">Team Name</th>
                 <th scope="col">view details</th>
               </tr>
             </thead>
             <tbody>
               <tr class="text-center" *ngFor="let item of live index as i">
                 <th scope="row">{{i+1}}</th>
-                <td>{{item.tournamentName}}</td>
-                <td>{{item.tournamentStartDate|date :"dd-MM-YYYY"}}</td>
-                <td>₹{{item.firstPrize}}/-</td>
-                <td (click)="read(item._id)"><i class="fa-solid fa-eye"></i></td>
+                <td>{{item.tournamentId.tournamentName}}</td>
+                <td>{{item.tournamentId.tournamentStartDate|date :"dd-MM-YYYY"}}</td>
+                <td>{{item.teamId.name}}</td>
+                <td (click)="read(item.tournamentId._id)"><i class="fa-solid fa-eye"></i></td>
               </tr>
               
             </tbody>
@@ -51,19 +51,19 @@
           <thead class="table-dark">
             <tr class="text-center">
               <th scope="col">S.No</th>
+              <th scope="col">Team Name</th>
               <th scope="col">Tournament Name</th>
               <th scope="col">Tournament Date</th>
-              <th scope="col">Tournament Prize</th>
               <th scope="col">view details</th>
             </tr>
           </thead>
           <tbody>
             <tr class="text-center" *ngFor="let item of upcoming index as i">
               <th scope="row">{{i+1}}</th>
-              <td>{{item.tournamentName}}</td>
-              <td>{{item.tournamentStartDate|date :"dd-MM-YYYY"}}</td>
-              <td>₹{{item.firstPrize}}/-</td>
-              <td (click)="read(item._id)" ><i class="fa-solid fa-eye"></i></td>
+              <td>{{item.tournamentId.tournamentName}}</td>
+              <td>{{item.tournamentId.tournamentStartDate|date :"dd-MM-YYYY"}}</td>
+              <td>{{item.teamId.name}}</td>
+              <td (click)="read(item.tournamentId._id)" ><i class="fa-solid fa-eye"></i></td>
             </tr>
             
           </tbody>
@@ -85,17 +85,17 @@
             <th scope="col">S.No</th>
             <th scope="col">Tournament Name</th>
             <th scope="col">Tournament Date</th>
-            <th scope="col">Tournament Prize</th>
+            <th scope="col">Team Name</th>
             <th scope="col">view details</th>
           </tr>
         </thead>
         <tbody>
           <tr class="text-center" *ngFor="let item of ended index as i">
             <th scope="row">{{i+1}}</th>
-            <td>{{item.tournamentName}}}}</td>
-            <td>{{item.tournamentStartDate|date :"dd-MM-YYYY"}}</td>
-            <td>₹{{item.firstPrize}}/-</td>
-            <td (click)="read(item._id)" ><i class="fa-solid fa-eye"></i></td>
+            <td>{{item.tournamentId.tournamentName}}</td>
+            <td>{{item.tournamentId.tournamentStartDate|date :"dd-MM-YYYY"}}</td>
+            <td>{{item.teamId.name}}</td>
+            <td (click)="read(item.tournamentId._id)" ><i class="fa-solid fa-eye"></i></td>
           </tr>
           
         </tbody>

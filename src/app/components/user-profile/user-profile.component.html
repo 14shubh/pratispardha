@@ -4,7 +4,7 @@
         <div class="col-md-3 left">
             <div class="side-nav">
                 <div class="user-img">
-                    <div  class="img">
+                    <div class="img">
                       <input (change)="uploadImage($event)" type="file" capture="enviroment" style="visibility: hidden;" >
 
                         <img src="{{UserProfile.image}}" alt="User Image" class="img-fluid">
@@ -28,15 +28,16 @@
                         <h2>{{UserProfile.name}}</h2>
                         <span>{{UserProfile.playerType}}</span>
                     </div>
-                    <div (click)="update()" class="update-btn">
+                    <div class="update-btn"> 
                         <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
-                        <a  class="update">Profile Update</a>
+                        <a  class="update" (click)="update()">Update</a>
                     </div>
                 </div>
                 <span class="bottom-border"></span>
                 <div class="profile-content">
                     <div class="text form-group">
-                        <input  [(ngModel)]="email" type="text" class="form-control" placeholder="Email" disabled>
+                        <label for="email">Email</label>
+                        <input  [(ngModel)]="email" type="text" class="form-control" placeholder=" " disabled>
                     </div>
                     <div class="text form-group">
                         <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile"  [disabled]="isDisabled">

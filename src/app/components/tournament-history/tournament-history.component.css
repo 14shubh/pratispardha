@@ -1,3 +1,11 @@
 .history{
     padding:80px 0;
 }
+.table thead tr{
+    background: var(--blue-radial-gradient);
+    color: #fff;
+    letter-spacing: 1px;
+}
+.table tbody tr .fa-eye{
+    cursor: pointer;
+}

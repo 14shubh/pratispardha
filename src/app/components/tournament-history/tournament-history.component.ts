@@ -22,11 +22,11 @@ export class TournamentHistoryComponent implements OnInit {
       console.log(data)
       for(let item of data.team){
         if(item.tournamentId.tournamentStartDate>new Date().getTime())
-               this.upcoming.push(item.tournamentId);
+               this.upcoming.push(item);
                else if(item.tournamentId.tournamentStartDate<new Date().getTime())
-               this.ended.push(item.tournamentId);
+               this.ended.push(item);
                else
-               this.live.push(item.tournamentId);
+               this.live.push(item);
       }
     },
     err=>{

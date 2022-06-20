@@ -20,6 +20,7 @@
     height: 320px;
 }
 .left .side-nav .user-img .img{
+    /* position: relative; */
     max-height: 250px;
     height: 100%;
     max-width: 300px;
@@ -37,6 +38,14 @@
     -moz-border-radius:50% ;
     -ms-border-radius:50% ;
     -o-border-radius:50% ;
+}
+.left .side-nav .user-img .img .fa-camera{
+  cursor: pointer;
+  margin-top: 8px;
+  /* position: absolute;
+  bottom: 0;
+  left: 35px;
+  font-size: 18px; */
 }
 .left .side-nav .user-img .user_name{
     width: 100%;
@@ -103,6 +112,7 @@
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+  cursor: pointer;
 }
 .header .update-btn .update:hover{
   transition: 0.3s ease-in-out;
