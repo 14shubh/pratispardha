@@ -13,8 +13,12 @@ button:disabled,button[disabled]{
 }
  
  .content_box{
- 
-  background-color: #0052A3;
+  border-radius: 4px 0 0 4px;
+  background: var(--blue-radial-gradient);
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  -ms-border-radius: 4px 0 0 4px;
+  -o-border-radius: 4px 0 0 4px;
 }
 .content_box .title h2{
   color: #FFFFFF;
@@ -38,16 +42,18 @@ button:disabled,button[disabled]{
   background: #FFFFFF;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
   padding: 50px 40px 50px 10px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
- 
+  border-radius:0 4px 4px 0;
+  -webkit-border-radius:0 4px 4px 0;
+  -moz-border-radius:0 4px 4px 0;
+  -ms-border-radius:0 4px 4px 0;
+  -o-border-radius:0 4px 4px 0;
+}
+.right .input-area{
+  padding:0 120px;
 }
 .right .input-area .input-data{
-  max-width: 650px;
-  margin-left: auto;
+  /* max-width: 650px;
+  margin-left: auto; */
 }
 .right .input-area .name-mobile{
   display: flex;
@@ -95,7 +101,7 @@ button:disabled,button[disabled]{
   text-decoration: none;
   font-weight: 400;
   font-size: 24px;
-  padding: 5px 40px;
+  padding: 2px 40px;
   color: #333;
   border: 1px solid rgb(99, 99, 99);
   border-radius: 4px;
@@ -109,7 +115,6 @@ button:disabled,button[disabled]{
   -ms-transition: 0.4s ease-in-out;
   -o-transition: 0.4s ease-in-out;
   cursor: pointer;
-  margin-left: 20%;
  
 }
  

@@ -19,7 +19,8 @@ export class EventsComponent implements OnInit {
   nowDate: any;
   page: number = 1;
   count: number = 0;
-  cardSize: number = 18;
+  cardSize: number = 18
+
   x:number = new Date().getTime() - (new Date().getHours() * 60 * 60 * 1000) - (new Date().getMinutes() * 60 * 1000) - (new Date().getSeconds() * 1000) - (new Date().getMilliseconds() - 19800000)
 
 

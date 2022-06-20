@@ -427,14 +427,12 @@
     display: flex;
     align-items: center;
 }
-/* .dropdown .dropdown-menu ul li .fa-user{
-    margin-left:3px;
-} */
-/* .dropdown .dropdown-menu ul li a{
+#right-dropdown .dropdown-menu ul li a:hove{
+    background: transparent !important;
+}
+#right-dropdown .dropdown-menu ul li{
     padding: 0;
     text-align: left;
     margin-left: 10px;
-} */
-/* .dropdown .dropdown-menu ul li i{
-    font-size: 15px;
-} */
+    margin-top: 10px;
+}
