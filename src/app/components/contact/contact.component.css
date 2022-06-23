@@ -114,8 +114,7 @@ button:disabled,button[disabled]{
   -moz-transition: 0.4s ease-in-out;
   -ms-transition: 0.4s ease-in-out;
   -o-transition: 0.4s ease-in-out;
-  cursor: pointer;
- 
+  cursor: pointer; 
 }
  
 .right  .input-area .form-group{

@@ -21,20 +21,24 @@ export class UserProfileComponent implements OnInit {
 
 
    }
+   selectFile(){
+    console.log('selectFile');
+    let element: HTMLElement = document.querySelector('input[type="file"]') as HTMLElement;
+    element.click();
+   }
+
    async uploadImage(event:any){
      console.log("called.....................")
       if(event.target.files.length > 0){
       const file = event.target.files[0];
       this.image = file;
-    await this.update();
+    console.log(this.image);
+        await this.update();
     this.ngOnInit();
     }
    }
-   selectFile(){
-    let element: HTMLElement = document.querySelector('input[type="file"]') as HTMLElement;
-    element.click();
-   }
-
+   
+   
   public status(isDisabled:any){
     if(isDisabled){
       this.isDisabled = false;
