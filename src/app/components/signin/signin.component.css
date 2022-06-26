@@ -126,9 +126,7 @@
 }
 .right .input-box .input-area .form-group input{
     padding:10px 10px 10px 60px;
-    /*border: 0;
-    border-bottom: 2px solid rgba(207, 207, 207, 0.719);
-    */border-radius: 5px;
+    border-radius: 5px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
@@ -138,9 +136,9 @@
 }
 .right .input-box .input-area .form-group #helpId{
     position: absolute;
-    top: 60px;
+    top: 50px;
     left: 20px;
-    color: rgb(215, 0, 0);
+    color: rgb(241, 28, 28);
 }
 .right .input-box .input-area .form-group #helpId .fa-circle-exclamation{
    font-size: 14px;
@@ -333,9 +331,9 @@
         font-size: 12px;
     }
 } 
-.right .input-box .input-area .form-group #helpId{
+/* .right .input-box .input-area .form-group #helpId{
     top: 40px;
-}
+} */
 button:disabled,button[disabled]{
     background-color: #cccccc;
     cursor:not-allowed !important;

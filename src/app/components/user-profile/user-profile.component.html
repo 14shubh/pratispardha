@@ -1,15 +1,15 @@
-
 <div class="container">
-    <div class="row profile">
+    <div class="row profile-data">
         <div class="col-md-3 left">
             <div class="side-nav">
                 <div class="user-img">
                     <div class="img">
-                      <input (change)="uploadImage($event)" type="file" capture="enviroment" style="visibility: hidden;" >
+                        <input (change)="uploadImage($event)" type="file" capture="enviroment"
+                            style="visibility: hidden;">
 
                         <img src="{{UserProfile.image}}" alt="User Image" class="img-fluid">
 
-                        <i  (click)="selectFile()" class="fa-solid fa-camera"></i>
+                        <i (click)="selectFile()" class="fa-solid fa-camera"></i>
                     </div>
                     <div class="user_name">
                         <h2>{{UserProfile.name}}</h2>
@@ -22,44 +22,81 @@
         </div>
         <div class="col-md-9 right">
             <div class="right-content">
-              <div class="profile">
-                <div class="header">
-                    <div class="name">
-                        <h2>{{UserProfile.name}}</h2>
-                        <span>{{UserProfile.playerType}}</span>
+                <div class="profile">
+                    <div class="header">
+                        <div class="name">
+                            <h2>{{UserProfile.name}}</h2>
+                            <span>{{UserProfile.playerType}}</span>
+                        </div>
+                        <div class="edit-btn">
+                            <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
+                            <a class="edit"(click)="status(isDisabled)">Edit</a>
+                        </div>
                     </div>
-                    <div class="update-btn"> 
-                        <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i>
-                        <a  class="update" (click)="update()">Update</a>
+                    <span class="bottom-border"></span>
+                    <div class="profile-content">
+                        <div class="text form-group">
+                            <!-- <label for="email">Email</label>
+                        <input  [(ngModel)]="email" type="text" class="form-control" placeholder=" " disabled> -->
+                            <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control" disabled placeholder=" " required />
+
+                            <label class="label-name">Email</label>
+                        </div>
+                        <div class="text form-group">
+                            <!-- <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile"
+                                [disabled]="isDisabled"> -->
+                                <input [(ngModel)]="mobile" type="text" name="mobile" id="mobile" class="form-control" [disabled]="isDisabled" placeholder=" " required />
+
+                            <label class="label-name">Mobile</label>
+                            <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
+                        </div>
+                        <div class="text form-group">
+                            <!-- <input [(ngModel)]="playerType" type="text" class="form-control" placeholder="PlayerType"
+                                [disabled]="isDisabled"> -->
+                               
+                                <input [(ngModel)]="playerType" type="text" class="form-control" 
+                                [disabled]="isDisabled" placeholder=" " required />
+
+                            <label class="label-name">Player Type</label>   
+                        </div>
+                        <div class="text form-group">
+                            <!-- <input [(ngModel)]="age" type="text" class="form-control" placeholder="Age"
+                                [disabled]="isDisabled"> -->
+
+                                <input [(ngModel)]="age" type="text" class="form-control"
+                                [disabled]="isDisabled" placeholder=" " required />
+
+                            <label class="label-name">Age</label>
+                            <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
+                        </div>
+                        <div class="text form-group">
+                            <!-- <input [(ngModel)]="address" type="text" class="form-control" placeholder="Address"
+                                [disabled]="isDisabled"> -->
+                                <input  [(ngModel)]="address" type="text" class="form-control" 
+                                [disabled]="isDisabled" placeholder=" " required />
+
+                            <label class="label-name">Address</label>
+                                
+                            <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
+                        </div>
+                        <div class="text form-group">
+                            <!-- <input [(ngModel)]="description" type="text" class="form-control" placeholder="description"
+                                [disabled]="isDisabled"> -->
+                                <!-- <input [(ngModel)]="description" type="text" class="form-control" 
+                                [disabled]="isDisabled" placeholder=" " required /> -->
+
+                                <textarea [(ngModel)]="description" class="form-control" 
+                                [disabled]="isDisabled" placeholder=" " required cols="30" rows="5"></textarea>
+
+                            <label class="label-name">Description</label>
+                            <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
+                        </div>
+                    </div>
+
+                    <div class="update-button">
+                        <a class="update" (click)="update()">Update</a>
                     </div>
                 </div>
-                <span class="bottom-border"></span>
-                <div class="profile-content">
-                    <div class="text form-group">
-                        <label for="email">Email</label>
-                        <input  [(ngModel)]="email" type="text" class="form-control" placeholder=" " disabled>
-                    </div>
-                    <div class="text form-group">
-                        <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile"  [disabled]="isDisabled">
-                        <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
-                    </div>
-                    <div class="text form-group">
-                        <input [(ngModel)]="playerType" type="text" class="form-control" placeholder="PlayerType" [disabled]="isDisabled">
-                    </div>
-                    <div class="text form-group">
-                        <input [(ngModel)]="age" type="text"  class="form-control" placeholder="Age"  [disabled]="isDisabled">
-                        <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
-                    </div>
-                    <div class="text form-group">
-                        <input [(ngModel)]="address" type="text" class="form-control" placeholder="Address" [disabled]="isDisabled">
-                        <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
-                    </div>
-                    <div class="text form-group">
-                        <input [(ngModel)]="description" type="text" class="form-control" placeholder="description" [disabled]="isDisabled">
-                        <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
-                    </div>
-                </div>
-            </div>
 
             </div>
         </div>
