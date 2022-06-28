@@ -96,9 +96,9 @@
     margin: 0 10px;
     cursor: pointer;
 }
-.social-icon .icons i:hover{
-    color: rgb(13, 82, 194);
-}
+/* .social-icon .icons i:hover{
+    color: rgb(39, 39, 39);
+} */
 
 
 @media screen and (min-width:1200px) and (max-width:1400px) {

@@ -21,7 +21,7 @@
         <div class="input-area">
           <div class="form-group">
             <i class="fa-solid fa-envelope"></i>
-            <input (keydown.enter)="tab()" type="email" pattern="[a-zA-Z0-9]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" [(ngModel)]="user.email"
+            <input (keydown.enter)="tab()" type="email" pattern="[a-zA-Z0-9.]+@[a-z]+\.[a-z]{2,3}" #email="ngModel" [(ngModel)]="user.email"
             name="email" id="email" class="form-control" aria-describedby="helpId"  placeholder=" " required />
             
             <label class="label-name">Email</label>

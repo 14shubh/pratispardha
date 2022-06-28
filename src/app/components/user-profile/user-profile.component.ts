@@ -73,6 +73,9 @@ export class UserProfileComponent implements OnInit {
       console.log("data is coming");
       console.log(data)
       this.UserProfile=data;
+      console.log("second data comming");
+      
+      console.log(this.UserProfile.image);
       this.name=this.UserProfile.name;
       this.email=this.UserProfile.email;
       this.mobile=this.UserProfile.mobile;

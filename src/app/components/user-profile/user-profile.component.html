@@ -6,8 +6,8 @@
                     <div class="img">
                         <input (change)="uploadImage($event)" type="file" capture="enviroment"
                             style="visibility: hidden;">
-
-                        <img src="{{UserProfile.image}}" alt="User Image" class="img-fluid">
+                        <!-- <i *ngIf="!UserProfile.image" class="fa fa-user" aria-hidden="true"></i>
+                        <img *ngIf="UserProfile.image" src="{{UserProfile.image}}" alt="User Image" class="img-fluid"> -->
 
                         <i (click)="selectFile()" class="fa-solid fa-camera"></i>
                     </div>
@@ -40,14 +40,14 @@
                         <input  [(ngModel)]="email" type="text" class="form-control" placeholder=" " disabled> -->
                             <input type="email" [(ngModel)]="email" name="email" id="email" class="form-control" disabled placeholder=" " required />
 
-                            <label class="label-name">Email</label>
+                            <label class="label-name">Email :</label>
                         </div>
                         <div class="text form-group">
                             <!-- <input [(ngModel)]="mobile" type="text" class="form-control" placeholder="Mobile"
                                 [disabled]="isDisabled"> -->
                                 <input [(ngModel)]="mobile" type="text" name="mobile" id="mobile" class="form-control" [disabled]="isDisabled" placeholder=" " required />
 
-                            <label class="label-name">Mobile</label>
+                            <label class="label-name">Mobile :</label>
                             <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
                         </div>
                         <div class="text form-group">
@@ -57,7 +57,7 @@
                                 <input [(ngModel)]="playerType" type="text" class="form-control" 
                                 [disabled]="isDisabled" placeholder=" " required />
 
-                            <label class="label-name">Player Type</label>   
+                            <label class="label-name">Player Type :</label>   
                         </div>
                         <div class="text form-group">
                             <!-- <input [(ngModel)]="age" type="text" class="form-control" placeholder="Age"
@@ -66,7 +66,7 @@
                                 <input [(ngModel)]="age" type="text" class="form-control"
                                 [disabled]="isDisabled" placeholder=" " required />
 
-                            <label class="label-name">Age</label>
+                            <label class="label-name">Age :</label>
                             <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
                         </div>
                         <div class="text form-group">
@@ -75,7 +75,7 @@
                                 <input  [(ngModel)]="address" type="text" class="form-control" 
                                 [disabled]="isDisabled" placeholder=" " required />
 
-                            <label class="label-name">Address</label>
+                            <label class="label-name">Address :</label>
                                 
                             <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
                         </div>
@@ -88,7 +88,7 @@
                                 <textarea [(ngModel)]="description" class="form-control" 
                                 [disabled]="isDisabled" placeholder=" " required cols="30" rows="5"></textarea>
 
-                            <label class="label-name">Description</label>
+                            <label class="label-name">Description :</label>
                             <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="status(isDisabled)"></i> -->
                         </div>
                     </div>

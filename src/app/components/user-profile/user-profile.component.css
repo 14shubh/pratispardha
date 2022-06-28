@@ -40,9 +40,11 @@
     padding: 8px;
 
 }
-.left .side-nav .user-img .img img{
+.left .side-nav .user-img .img img,
+.left .side-nav .user-img .img .fa-user{
     height: 100%;
     width: 100%;
+    padding: 10px 0;
     border: 2px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.205);
     border-radius:50% ;
@@ -50,6 +52,11 @@
     -moz-border-radius:50% ;
     -ms-border-radius:50% ;
     -o-border-radius:50% ;
+}
+.left .side-nav .user-img .img .fa-user{
+  text-align: center;
+  font-size:184px;
+  color: rgb(183, 183, 183);
 }
 .left .side-nav .user-img .img .fa-camera{
   cursor: pointer;
@@ -203,8 +210,9 @@
   position: absolute;
   top:5px;
   left: 35px;
-  font-weight: 500;
-  color: rgb(11, 121, 194) !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: rgb(0, 66, 110) !important;
   pointer-events: none;
   background: #fff;
   padding:0 2px;
@@ -226,6 +234,10 @@
   color: #4285f4;
   font-size: 16px;
   background-color: transparent;
+}
+.profile-content .form-group input:disabled,
+.profile-content .form-group textarea:disabled{
+  background: #eff5ff;
 }
 
 .profile-content .form-group textarea:not(:placeholder-shown) + .label-name, 
