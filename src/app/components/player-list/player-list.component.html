@@ -23,7 +23,9 @@
       ">
       <div class="card">
         <div class="card-img">
-          <img src="{{Players.image}}" class="card-img-top img-fluid" alt="player image" />
+          <i *ngIf="IsImage(Players)" class="fa fa-user" aria-hidden="true"></i>
+          
+          <img *ngIf="!IsImage(Players)" src="{{Players.image}}" class="card-img-top img-fluid" alt="player image" />
         </div>
         <div class="player-type">
           <small>{{ Players.playerType }}</small>

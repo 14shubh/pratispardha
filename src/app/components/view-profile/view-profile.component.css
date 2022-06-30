@@ -24,10 +24,18 @@
     height: 100%;
     width: 100%;
 }
-.left .player-image .card-image img{
+.left .player-image .card-image img,
+.left .player-image .card-image .fa-user{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    padding:10px 0;
+}
+
+.left .player-image .card-image .fa-user{
+    text-align: center;
+    font-size: 194px;
+    color: rgb(241, 241, 241);
 }
 .left .left-image .type{
     background: #003D76;

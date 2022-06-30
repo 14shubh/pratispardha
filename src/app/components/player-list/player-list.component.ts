@@ -24,16 +24,9 @@ export class PlayerListComponent implements OnInit {
 	voiceActiveSectionSuccess: boolean = false;
 	voiceActiveSectionListening: boolean = false;
 	voiceText: any;
+  // flag: boolean = true;
 
-  constructor(private _userAuth: UserAuthService,private toast:ToastrService,private ngZone: NgZone,private Spin:NgxSpinnerService, private _router: Router) { 
-    this.Spin.show()
-    this._userAuth.playerList().subscribe(data =>{
-      this.playerList = data
-      this.Spin.hide()
-      },err => {
-        console.log(err);
-      }) 
-  }
+  constructor(private _userAuth: UserAuthService,private toast:ToastrService,private ngZone: NgZone,private Spin:NgxSpinnerService, private _router: Router) {}
 
   
 
@@ -47,14 +40,6 @@ export class PlayerListComponent implements OnInit {
   onCardDataChange(event: any) {
     this.page = event;
   }
-
-  
-
-
-  ngOnInit(): void {
-  }
-
-
   voice(){
     if(this.status){
       this.toast.success("MIKE IS ON");
@@ -67,10 +52,6 @@ export class PlayerListComponent implements OnInit {
     }
 
   }
-
-
-
-
 
   initializeVoiceRecognitionCallback(): void {
 		annyang.addCallback('error', (err: any) => {
@@ -146,6 +127,30 @@ export class PlayerListComponent implements OnInit {
       annyang.abort();
     }
 	}
+
+
+  ngOnInit(): void {
+    this.Spin.show()
+    this._userAuth.playerList().subscribe(data =>{
+      this.playerList = data
+      
+      this.Spin.hide()
+      },err => {
+        console.log(err);
+      }) 
+  }
+
+  
+  public IsImage(Players:any){
+    if(Players.image == " "){
+      return true;
+    }else{
+      return false;
+    }
+          
+}
+
+
 }
 
 

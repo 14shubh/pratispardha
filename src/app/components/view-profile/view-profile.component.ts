@@ -49,6 +49,13 @@ export class ViewProfileComponent implements OnInit {
       alert("Please Select Any tournament")
    }
 
+  public IsImage(){
+    if(this.player.image == ""){
+      return false;
+    }else{
+      return true;
+    }
+  } 
   ngOnInit(): void {
     console.log(this._activeRouter.snapshot.params['status'])
     this.status=this._activeRouter.snapshot.params['status'];
@@ -59,6 +66,8 @@ export class ViewProfileComponent implements OnInit {
      console.log("players data");
      console.log(data.request)
           this.player=data;
+          // console.log('player data comming');
+          // console.log(this.player);
           this._userAuth.viewTeamByOwnerId(sessionStorage.getItem('UserLoginId')).subscribe(data=>{
             console.log(data);
             this.spin.hide();
