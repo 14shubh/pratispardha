@@ -44,7 +44,7 @@
 .left .side-nav .user-img .img .fa-user{
     height: 100%;
     width: 100%;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     border: 2px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.205);
     border-radius:50% ;
@@ -54,6 +54,7 @@
     -o-border-radius:50% ;
 }
 .left .side-nav .user-img .img .fa-user{
+  padding:10px 0;
   text-align: center;
   font-size:184px;
   color: rgb(241, 241, 241);

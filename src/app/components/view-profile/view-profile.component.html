@@ -4,8 +4,8 @@
             <div class="left-image">
                 <div class="player-image">
                     <div class="card-image">
-                        <i *ngIf="IsImage()" class="fa fa-user" aria-hidden="true"></i>
-                        <img *ngIf="!IsImage()" src="{{player.image}}" alt="Player Image">
+                        <i *ngIf="!IsImage()" class="fa fa-user" aria-hidden="true"></i>
+                        <img *ngIf="IsImage()" src="{{player.image}}" alt="Player Image">
                     </div>
                 </div>
                 <div class="type">
