@@ -6,8 +6,8 @@
                     <div class="img">
                         <input (change)="uploadImage($event)" type="file" capture="enviroment"
                             style="visibility: hidden;">
-                        <i *ngIf="IsImage()" class="fa fa-user" aria-hidden="true"></i>
-                        <img *ngIf="!IsImage()" src="{{UserProfile.image}}" alt="User Image" class="img-fluid">
+                        <i *ngIf="!IsImage()" class="fa fa-user" aria-hidden="true"></i>
+                        <img *ngIf="IsImage()" src="{{UserProfile.image}}" alt="User Image" class="img-fluid">
 
                         <i (click)="selectFile()" class="fa-solid fa-camera"></i>
                     </div>
