@@ -58,12 +58,11 @@ const socialProvider={
     ContactComponent,
     RegistrationFormComponent,
     UserProfileComponent,
-
     UpdateProfileComponent,
-      TournamentHistoryComponent,
-      ForgetPageComponent,
-      NewPasswordComponent,
-      TeamHistoryComponent
+    TournamentHistoryComponent,
+    ForgetPageComponent,
+    NewPasswordComponent,
+    TeamHistoryComponent
   ],
   imports: [
     BrowserModule,
