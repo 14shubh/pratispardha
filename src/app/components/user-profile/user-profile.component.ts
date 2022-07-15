@@ -87,7 +87,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   public IsImage(){
-    if (this.UserProfile.image == ""){
+    if (this.UserProfile.image == " "){
       return false;
     }
     else{
