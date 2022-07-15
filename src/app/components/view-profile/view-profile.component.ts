@@ -50,7 +50,7 @@ export class ViewProfileComponent implements OnInit {
    }
 
   public IsImage(){
-    if(this.player.image == ""){
+    if(this.player.image == " "){
       return false;
     }else{
       return true;
@@ -66,8 +66,8 @@ export class ViewProfileComponent implements OnInit {
      console.log("players data");
      console.log(data.request)
           this.player=data;
-          // console.log('player data comming');
-          // console.log(this.player);
+          console.log('player image comming');
+          console.log(this.player.image);
           this._userAuth.viewTeamByOwnerId(sessionStorage.getItem('UserLoginId')).subscribe(data=>{
             console.log(data);
             this.spin.hide();
