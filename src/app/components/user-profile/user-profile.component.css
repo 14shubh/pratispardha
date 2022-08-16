@@ -99,10 +99,7 @@
     color: #333;
  }
 
-
-
-
- .profile{
+.profile{
   position: relative;
 }
 .header{
@@ -267,4 +264,19 @@
 }
 .text i{
 cursor: pointer;
+}
+
+
+@media only screen and (max-width:567px){
+  .left .side-nav .user-img{
+    /* border-bottom: 1px solid rgb(207, 207, 207);
+    margin-bottom:25px; */
+    height: 320px;
+}
+.left .side-nav .user-img .img{
+    /* max-height: 250px;
+    height: 100%;
+    max-width: 250px; */
+    margin: auto;
+}
 }
