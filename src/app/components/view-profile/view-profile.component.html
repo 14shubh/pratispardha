@@ -13,21 +13,21 @@
                 </div>
 
                 <div *ngIf='status' class="dropdown">
-                    <select  #mySelect name="tournament_name" id="tournament_name" class="form-select" aria-label="Default select example">
+                    <select #mySelect name="tournament_name" id="tournament_name" class="form-select" aria-label="Default select example">
                         <option value="1" selected disabled>Select tournament</option>
                         <option value="{{events._id}}" *ngFor="let events of tournaments">{{events.name}}</option>
                         
                     </select>
                 </div>
 
-                <div *ngIf='status' (click)="sendRequest()"class="add-btn">
+                <div *ngIf='status' (click)="sendRequest()" class="add-btn">
                     <a>Add Player</a>
                 </div>
             </div>
         </div>
         <div class="col-md-8 right">
             <div class="title">
-                <div class="player-name">               
+                <div class="player-name">
                     <h2>{{player.name}}</h2>
                     <span>{{player.playerType}}</span>
                 </div>
@@ -43,31 +43,31 @@
                     <span>Age</span>
                     <span>{{player.age}} years</span>
                     <span class="border-bottom"></span>
-            
+
                 </div>
                 <div class="mobile text">
                     <span>Mobile No</span>
                     <span>{{player.mobile}}</span>
                     <span class="border-bottom"></span>
-            
+
                 </div>
                 <div class="email text">
                     <span>Email</span>
                     <span>{{player.email}}</span>
                     <span class="border-bottom"></span>
-            
+
                 </div>
                 <div class="address text">
                     <span>Address</span>
                     <span>{{player.address}}</span>
                     <span class="border-bottom"></span>
-            
+
                 </div>
                 <div class="playertype text">
                     <span>PlayerType</span>
                     <span>{{player.playerType}}</span>
                     <span class="border-bottom"></span>
-            
+
                 </div>
                 <div class="description text">
                     <span>Description</span>
@@ -79,7 +79,7 @@
     </div>
 </div>
 
-<ngx-spinner  style="color: rgb(250, 250, 250);">
+<!-- <ngx-spinner  style="color: rgb(250, 250, 250);">
     <img src="../../../assets/images/spinner_gif/Eclipse-0.5s-64px.svg" alt="spinner">
     Loading...
-</ngx-spinner>
+</ngx-spinner> -->

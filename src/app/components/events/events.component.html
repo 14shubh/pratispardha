@@ -1,33 +1,33 @@
 <div class="container all-events">
-  <div class="heading">
-    <h1>All Events</h1>
-    <span class="border"></span>
-  </div>
+    <div class="heading">
+        <h1>All Events</h1>
+        <span class="border"></span>
+    </div>
 
 
 
 
-  <!-- live Events -->
-  <div class="title" *ngIf="Live_event.length > 0">
-    <h2>Live Events</h2>
-    <span class="border-bottom"></span>
-  </div>
-  <div class="row events">
+    <!-- live Events -->
+    <div class="title" *ngIf="Live_event.length > 0">
+        <h2>Live Events</h2>
+        <span class="border-bottom"></span>
+    </div>
+    <div class="row events">
 
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let live of Live_event">
-      <div class="card card-content">
-        <div class="card-img">
-          <img src="{{live.banner}}" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <div class="primary-text">
-            <h3>Event : <span>{{live.tournamentName}}</span></h3>
-            <span class="read_more">
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let live of Live_event">
+            <div class="card card-content">
+                <div class="card-img">
+                    <img src="{{live.banner}}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <div class="primary-text">
+                        <h3>Event : <span>{{live.tournamentName}}</span></h3>
+                        <span class="read_more">
               read more
             </span>
-          </div>
-        </div>
-        <!-- <div class="overlay-box">
+                    </div>
+                </div>
+                <!-- <div class="overlay-box">
           <div class="overlay-content">
             <div class="date">
 
@@ -53,62 +53,62 @@
             <a class="register-btn" (click)="register(live)">Register</a>
           </div>
         </div> -->
-        <div class="overlay-box">
-          <div class="overlay-content">
-            <div class="date">
-              
-              <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
-              <span>Start: {{live.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{live.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+                <div class="overlay-box">
+                    <div class="overlay-content">
+                        <div class="date">
+
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
+                            <span>Start: {{live.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{live.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="tournament_date event-cards">
+
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
+                            <span>Start: {{live.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="organiser event-cards">
+
+                            <h3><i class="fas fa-user-tie"></i> organiser : <span>{{live.orgainiserId.name}}</span></h3>
+                        </div>
+                        <div class="location event-cards">
+
+                            <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{live.tournamentAddress}}</span></h3>
+                        </div>
+                    </div>
+                    <div class="overlay-btn">
+                        <a class="read-more-btn" (click)="read(live._id)">Read More</a>
+                        <a class="register-btn" (click)="register(live)">Register</a>
+                    </div>
+                </div>
             </div>
-            <div class="tournament_date event-cards">
-              
-              <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
-              <span>Start: {{live.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
-            </div>
-            <div class="organiser event-cards">
-              
-              <h3><i class="fas fa-user-tie"></i> organiser : <span>{{live.orgainiserId.name}}</span></h3>
-            </div>
-            <div class="location event-cards">
-              
-              <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{live.tournamentAddress}}</span></h3>
-            </div>
-          </div>
-          <div class="overlay-btn">
-            <a class="read-more-btn"  (click)="read(live._id)">Read More</a>
-            <a class="register-btn" (click)="register(live)">Register</a>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- <div class="d-flex justify-content-center pagination">
+        <!-- <div class="d-flex justify-content-center pagination">
           <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onCardDataChange($event)">
           </pagination-controls>
         </div> -->
-  </div>
+    </div>
 
 
-  <!-- Upcomming Events -->
-  <div class="title" *ngIf="upcomming_event.length > 0">
-    <h2>Upcomming Events</h2>
-    <span class="border-bottom"></span>
-  </div>
-  <div class="row events">
+    <!-- Upcomming Events -->
+    <div class="title" *ngIf="upcomming_event.length > 0">
+        <h2>Upcomming Events</h2>
+        <span class="border-bottom"></span>
+    </div>
+    <div class="row events">
 
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let upcomming_event of upcomming_event">
-      <div class="card card-content">
-        <div class="card-img">
-          <img src="{{upcomming_event.banner}}" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <div class="primary-text">
-            <h3>Event : <span>{{upcomming_event.tournamentName}}</span></h3>
-            <span class="read_more">
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let upcomming_event of upcomming_event">
+            <div class="card card-content">
+                <div class="card-img">
+                    <img src="{{upcomming_event.banner}}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <div class="primary-text">
+                        <h3>Event : <span>{{upcomming_event.tournamentName}}</span></h3>
+                        <span class="read_more">
               read more
             </span>
-          </div>
-        </div>
-        <!-- <div class="overlay-box">
+                    </div>
+                </div>
+                <!-- <div class="overlay-box">
           <div class="overlay-content">
             <div class="date">
 
@@ -136,97 +136,97 @@
             <a class="register-btn" (click)="register(upcomming_event)">Register</a>
           </div>
         </div> -->
-        <div class="overlay-box">
-          <div class="overlay-content">
-            <div class="date">
-              
-              <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
-              <span>Start: {{upcomming_event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{upcomming_event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+                <div class="overlay-box">
+                    <div class="overlay-content">
+                        <div class="date">
+
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
+                            <span>Start: {{upcomming_event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{upcomming_event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="tournament_date event-cards">
+
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
+                            <span>Start: {{upcomming_event.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="organiser event-cards">
+
+                            <h3><i class="fas fa-user-tie"></i> organiser : <span>{{upcomming_event.orgainiserId.name}}</span></h3>
+                        </div>
+                        <div class="location event-cards">
+
+                            <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{upcomming_event.tournamentAddress}}</span></h3>
+                        </div>
+                    </div>
+                    <div class="overlay-btn">
+                        <a class="read-more-btn" (click)="read(upcomming_event._id)">Read More</a>
+                        <a class="register-btn" (click)="register(upcomming_event)">Register</a>
+                    </div>
+                </div>
             </div>
-            <div class="tournament_date event-cards">
-              
-              <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
-              <span>Start: {{upcomming_event.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
-            </div>
-            <div class="organiser event-cards">
-              
-              <h3><i class="fas fa-user-tie"></i> organiser : <span>{{upcomming_event.orgainiserId.name}}</span></h3>
-            </div>
-            <div class="location event-cards">
-              
-              <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{upcomming_event.tournamentAddress}}</span></h3>
-            </div>
-          </div>
-          <div class="overlay-btn">
-            <a class="read-more-btn"  (click)="read(upcomming_event._id)">Read More</a>
-            <a class="register-btn" (click)="register(upcomming_event)">Register</a>
-          </div>
+
         </div>
-      </div>
-      
-    </div>
-    
-    <!-- <div class="d-flex justify-content-center pagination">
+
+        <!-- <div class="d-flex justify-content-center pagination">
       <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onCardDataChange($event)">
       </pagination-controls>
   </div> -->
-  </div>
+    </div>
 
 
-  <!-- End Events -->
-  <div class="title" *ngIf="end_event.length > 0">
-    <h2>End Events</h2>
-    <span class="border-bottom"></span>
-  </div>
+    <!-- End Events -->
+    <div class="title" *ngIf="end_event.length > 0">
+        <h2>End Events</h2>
+        <span class="border-bottom"></span>
+    </div>
 
-  <div class="row events">
+    <div class="row events">
 
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let end_event of end_event">
-      <div class="card card-content">
-        <div class="card-img">
-          <img src="{{end_event.banner}}" class="card-img-top" alt="...">
-        </div>
-        <div class="card-body">
-          <div class="primary-text">
-            <h3>Event : <span>{{end_event.tournamentName}}</span></h3>
-            <span class="read_more">
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let end_event of end_event">
+            <div class="card card-content">
+                <div class="card-img">
+                    <img src="{{end_event.banner}}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <div class="primary-text">
+                        <h3>Event : <span>{{end_event.tournamentName}}</span></h3>
+                        <span class="read_more">
               read more
             </span>
-          </div>
+                    </div>
+                </div>
+                <div class="overlay-box">
+                    <div class="overlay-content">
+                        <div class="date">
+
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
+                            <span>Start: {{end_event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{end_event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="tournament_date event-cards">
+
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
+                            <span>Start: {{end_event.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="organiser event-cards">
+
+                            <h3><i class="fas fa-user-tie"></i> organiser : <span>{{end_event.orgainiserId.name}}</span></h3>
+                        </div>
+                        <div class="location event-cards">
+
+                            <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{end_event.tournamentAddress}}</span></h3>
+                        </div>
+                    </div>
+                    <div class="overlay-btn">
+                        <a class="read-more-btn" (click)="read(end_event._id)">Read More</a>
+                        <a class="register-btn" (click)="register(end_event)">Register</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="overlay-box">
-          <div class="overlay-content">
-            <div class="date">
-              
-              <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
-              <span>Start: {{end_event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{end_event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
-            </div>
-            <div class="tournament_date event-cards">
-              
-              <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
-              <span>Start: {{end_event.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
-            </div>
-            <div class="organiser event-cards">
-              
-              <h3><i class="fas fa-user-tie"></i> organiser : <span>{{end_event.orgainiserId.name}}</span></h3>
-            </div>
-            <div class="location event-cards">
-              
-              <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{end_event.tournamentAddress}}</span></h3>
-            </div>
-          </div>
-          <div class="overlay-btn">
-            <a class="read-more-btn"  (click)="read(end_event._id)">Read More</a>
-            <a class="register-btn" (click)="register(end_event)">Register</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 
 </div>
 
-<ngx-spinner  style="color: rgb(250, 250, 250);">
+<!-- <ngx-spinner  style="color: rgb(250, 250, 250);">
   <img src="../../../assets/images/spinner_gif/Eclipse-0.5s-64px.svg" alt="spinner">
   Loading...
-</ngx-spinner>
+</ngx-spinner> -->

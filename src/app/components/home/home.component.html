@@ -1,33 +1,33 @@
 <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
-        <div class="banner-content">
-            <h1>Cricket tournaments</h1>
-            <span>“You don’t play for the crowd. You play for the country.”</span>
+        <div class="carousel-item active">
+            <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
+            <div class="banner-content">
+                <h1>Cricket tournaments</h1>
+                <span>“You don’t play for the crowd. You play for the country.”</span>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/images/home_banner_3.png" class="d-block w-100 fluid-img" alt="slider image">
-        <div class="banner-content">
-            <h1>Cricket tournaments</h1>
-            <span>“Cricket is not everything, not by any means, but it is a large part of who I am.”</span>
+        <div class="carousel-item">
+            <img src="../../../assets/images/home_banner_3.png" class="d-block w-100 fluid-img" alt="slider image">
+            <div class="banner-content">
+                <h1>Cricket tournaments</h1>
+                <span>“Cricket is not everything, not by any means, but it is a large part of who I am.”</span>
+            </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
-        <div class="banner-content">
-            <h1>Cricket tournaments</h1>
-            <span>“I always dreamt of holding the bat and winning games for India. That was my inspiration to take up cricket.”
+        <div class="carousel-item">
+            <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
+            <div class="banner-content">
+                <h1>Cricket tournaments</h1>
+                <span>“I always dreamt of holding the bat and winning games for India. That was my inspiration to take up cricket.”
               
             </span>
+            </div>
         </div>
-      </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -37,163 +37,165 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+</div>
 
- <div class="container sub-hero">
-     <div class="heading">
-         <h1>Sports Events in indore</h1>
-         <span class="border"></span>
-     </div>
-     <div class="event-title">
-      <h2>Upcomming Events</h2>
-      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-      <span class="underline"></span>
+<div class="container sub-hero">
+    <div class="heading">
+        <h1>Sports Events in indore</h1>
+        <span class="border"></span>
     </div>
-     <div class="row evets">
-      
-         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let Event of upcomming_event.slice(0,8)">
-          <div class="card card-content" >
-            <div class="card-img">
-              <img src="{{Event.banner}}" class="card-img-top" alt="...">
-            </div>
-            <div class="card-body">
-              <div class="primary-text">
-                <h3>Event : <span>{{Event.tournamentName}}</span></h3>
-                <span class="read_more">
+    <div class="event-title">
+        <h2>Upcomming Events</h2>
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        <span class="underline"></span>
+    </div>
+    <div class="row evets">
+
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 event-card" *ngFor="let Event of upcomming_event.slice(0,8)">
+            <div class="card card-content">
+                <div class="card-img">
+                    <img src="{{Event.banner}}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body">
+                    <div class="primary-text">
+                        <h3>Event : <span>{{Event.tournamentName}}</span></h3>
+                        <span class="read_more">
                   read more
                 </span>
-              </div>
+                    </div>
+                </div>
+                <div class="overlay-box">
+                    <div class="overlay-content">
+                        <div class="date">
+
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
+                            <span>Start: {{Event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{Event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="tournament_date event-cards">
+
+                            <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
+                            <span>Start: {{Event.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
+                        </div>
+                        <div class="organiser event-cards">
+
+                            <h3><i class="fas fa-user-tie"></i> organiser : <span>{{Event.orgainiserId.name}}</span></h3>
+                        </div>
+                        <div class="location event-cards">
+
+                            <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{Event.tournamentAddress}}</span></h3>
+                        </div>
+                    </div>
+                    <div class="overlay-btn">
+                        <a class="read-more-btn" (click)="read(Event._id)">Read More</a>
+                        <a class="register-btn" (click)="register(Event)">Register</a>
+                    </div>
+                </div>
             </div>
-            <div class="overlay-box">
-              <div class="overlay-content">
-                <div class="date">
-                  
-                  <h3><i class="fa fa-calendar" aria-hidden="true"></i> Registration date</h3>
-                  <span>Start: {{Event.tournamentApplyDate | date:'dd-MM-yyyy'}} | End: {{Event.tournamentEndDate | date:'dd-MM-yyyy'}}</span>
-                </div>
-                <div class="tournament_date event-cards">
-                  
-                  <h3><i class="fa fa-calendar" aria-hidden="true"></i> Tournament date</h3>
-                  <span>Start: {{Event.tournamentStartDate | date:'dd-MM-yyyy'}}</span>
-                </div>
-                <div class="organiser event-cards">
-                  
-                  <h3><i class="fas fa-user-tie"></i> organiser : <span>{{Event.orgainiserId.name}}</span></h3>
-                </div>
-                <div class="location event-cards">
-                  
-                  <h3> <i class="fa fa-location-arrow" aria-hidden="true"></i> Venue : <span>{{Event.tournamentAddress}}</span></h3>
-                </div>
-              </div>
-              <div class="overlay-btn">
-                <a class="read-more-btn"  (click)="read(Event._id)">Read More</a>
-                <a class="register-btn" (click)="register(Event)">Register</a>
-              </div>
-            </div>
-          </div>
-         </div>
-     </div>
-     <div class="view-all">
-       <span class="view-text" (click)="AllEvents()">View All</span>
-       <i class="fa-solid fa-angle-right" id="arrow-icon"></i>
-       <span class="view-all-border"></span>
-     </div>
- </div> 
+        </div>
+    </div>
+    <div class="view-all">
+        <span class="view-text" (click)="AllEvents()">View All</span>
+        <i class="fa-solid fa-angle-right" id="arrow-icon"></i>
+        <span class="view-all-border"></span>
+    </div>
+</div>
 
 <!-- story section -->
 
 <div class="container story-section">
-  <div class="heading">
-    <h1>Story</h1>
-    <span class="border"></span>
-  </div>
-  <div class="row story">
-    <div class="col-lg-6 left">
-      <div class="story-img">
-        <img src="../../../assets/images/story_1.png" alt="story image" class="fluid-img story-img">
-      </div>
+    <div class="heading">
+        <h1>Story</h1>
+        <span class="border"></span>
     </div>
-    <div class="col-lg-6 right">
-      <div class="story-content">
-        <div class="story-title">
-          <h1>Indian national cricket team</h1>
+    <div class="row story">
+        <div class="col-lg-6 left">
+            <div class="story-img">
+                <img src="../../../assets/images/story_1.png" alt="story image" class="fluid-img story-img">
+            </div>
         </div>
-        <div class="story-body">
-          <p>
-            India has won five major ICC tournaments. The team has won the 
-Cricket World Cup twice (1983 and 2011), the ICC T20 World Cup once (2007) and the ICC Champions Trophy twice (2002 and 2013) and have also finished as runners-up in the Cricket World Cup once (2003), the T20 World Cup once (2014), and the Champions Trophy twice (2000 and 2017). The team were also runners-up at the inaugural 2019–2021 ICC World Test Championship. It was the second team after West Indies to win the World Cup and the first team to win the World Cup at home soil after winning the 2011 Cricket World Cup.
-          </p>
+        <div class="col-lg-6 right">
+            <div class="story-content">
+                <div class="story-title">
+                    <h1>Indian national cricket team</h1>
+                </div>
+                <div class="story-body">
+                    <p>
+                        India has won five major ICC tournaments. The team has won the Cricket World Cup twice (1983 and 2011), the ICC T20 World Cup once (2007) and the ICC Champions Trophy twice (2002 and 2013) and have also finished as runners-up in the Cricket World Cup
+                        once (2003), the T20 World Cup once (2014), and the Champions Trophy twice (2000 and 2017). The team were also runners-up at the inaugural 2019–2021 ICC World Test Championship. It was the second team after West Indies to win the
+                        World Cup and the first team to win the World Cup at home soil after winning the 2011 Cricket World Cup.
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
 
-  <div class="row story_2">
-    <div class="col-lg-6 left">
-      <div class="story-content">
-        <div class="story-title">
-          <h1>cricket world cup</h1>
+    <div class="row story_2">
+        <div class="col-lg-6 left">
+            <div class="story-content">
+                <div class="story-title">
+                    <h1>cricket world cup</h1>
+                </div>
+                <div class="story-body">
+                    <p>
+                        The Cricket World Cup (officially known as ICC Men's Cricket World Cup)[2] is the international championship of One Day International (ODI) cricket.The event is organised by the sport's governing body, the International Cricket Council (ICC), every four
+                        years,with preliminary qualification roundsleading up to a finals tournament. The tournament is one of the world's most viewed sporting events and is considered the "flagship event of the international cricket calendar" by the
+                        ICC.England are the current champions after winning the 2019 World Cup edition. The next tournament will be held in India in 2023 and the subsequent 2027 World Cup will be held jointly in South Africa, Zimbabwe and Namibia.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="story-body">
-          <p>
-            The Cricket World Cup (officially known as ICC Men's Cricket World Cup)[2] is
-            the international championship of One Day International (ODI) cricket.The event is organised by the sport's governing body, the International Cricket Council (ICC), every four years,with preliminary qualification roundsleading up to a finals tournament. The tournament is one of the world's most viewed sporting events and is considered the "flagship event of the international cricket calendar" by the ICC.England are the current champions after winning the 2019 World Cup edition. The next tournament will be held in India in 2023 and the subsequent 2027 World Cup will be held jointly in South Africa, Zimbabwe and Namibia.
-          </p>
+        <div class="col-lg-6 right">
+            <div class="story-img">
+                <img src="../../../assets/images/story_2.png" alt="story image" class="fluid-img story-img">
+            </div>
         </div>
-      </div>
     </div>
-    <div class="col-lg-6 right">
-      <div class="story-img">
-        <img src="../../../assets/images/story_2.png" alt="story image" class="fluid-img story-img">
-      </div>
-    </div>
-  </div>
 </div>
 
 
 <!-- footer slider -->
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
-      <div class="banner-content">
-          <h1>Cricket tournaments</h1>
-          <span>“You don’t play for the crowd. You play for the country.”</span>
-      </div>
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-item">
-      <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
-      <div class="banner-content">
-          <h1>Cricket tournaments</h1>
-          <span>“You don’t play for the crowd. You play for the country.”</span>
-      </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
+            <div class="banner-content">
+                <h1>Cricket tournaments</h1>
+                <span>“You don’t play for the crowd. You play for the country.”</span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
+            <div class="banner-content">
+                <h1>Cricket tournaments</h1>
+                <span>“You don’t play for the crowd. You play for the country.”</span>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img" alt="slider image">
+            <div class="banner-content">
+                <h1>Cricket tournaments</h1>
+                <span>“You don’t play for the crowd. You play for the country.”</span>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-      <img src="../../../assets/images/home_banner.png" class="d-block w-100 fluid-img"  alt="slider image">
-      <div class="banner-content">
-          <h1>Cricket tournaments</h1>
-          <span>“You don’t play for the crowd. You play for the country.”</span>
-      </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
 
-<ngx-spinner  style="color: rgb(250, 250, 250);">
+<!-- <ngx-spinner  style="color: rgb(250, 250, 250);">
   <img src="../../../assets/images/spinner_gif/Eclipse-0.5s-64px.svg" alt="spinner">
   Loading...
-</ngx-spinner>
+</ngx-spinner> -->
